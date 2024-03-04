@@ -21,7 +21,7 @@ function HeroSection() {
             }}
           />
           <Button
-            label="Learn More"
+            label="Learn More →"
             className={styles.btnSecondary}
             onClick={() => {
               // Nav to something, placeholder for now
