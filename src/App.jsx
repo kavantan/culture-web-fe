@@ -4,6 +4,7 @@ import CommunityPage from './pages/CommunityPage';
 import ContactUsPage from './pages/ContactUsPage';
 import CulturesPage from './pages/CulturesPage';
 import MainPage from './pages/MainPage/MainPage';
+import KathakaliPage from './pages/CulturesKathakaliPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/community" element={<CommunityPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/cultures" element={<CulturesPage />} />
+        <Route path="/cultures/kathakali" element={<KathakaliPage />} />
       </Routes>
     </BrowserRouter>
   );
