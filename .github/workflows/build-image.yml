@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: npm ci
       - run: npm run build
       - name: Login to DockerHub
         run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u culture4web --password-stdin
