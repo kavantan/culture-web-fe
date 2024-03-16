@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 21.x
@@ -19,10 +18,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: npm ci
       - run: npm run build
       - name: Login to DockerHub
         run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u culture4web --password-stdin
       - name: Build the Docker image
-        run: docker build -t culture-web-fe:${{ github.event.inputs.image-tag }} .
+        run: docker build -t culture4web/culture-web-fe:${{ github.event.inputs.image-tag }} .
       - name: Push the Docker image
         run: docker push culture4web/culture-web-fe:${{ github.event.inputs.image-tag }}
