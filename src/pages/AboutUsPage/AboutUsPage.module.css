@@ -1,0 +1,100 @@
+.aboutUsContainer {
+  background-color: #2b2d38;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  font-size: 3vw;
+  margin-bottom: 20px;
+}
+
+.mainContent {
+  display: flex;
+  align-items: flex-start;
+}
+
+.videoContainer {
+  flex-basis: 50%;
+  padding-right: 20px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.textContainer {
+  flex-basis: 50%;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.subHeader {
+  font-size: 3vw;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.5vw;
+  margin: 1rem 0;
+}
+
+.cultureLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.link {
+  color: #db2a6b;
+  text-decoration: none;
+  font-size: 2vw;
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  font-size: 1.5vw;
+  margin-bottom: 1rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .videoContainer,
+  .textContainer {
+    flex-basis: 100%;
+    padding: 0;
+  }
+
+  .video {
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 5vw;
+  }
+
+  .subHeader {
+    font-size: 4vw;
+  }
+
+  .description,
+  .link,
+  .text {
+    font-size: 4vw;
+  }
+}
