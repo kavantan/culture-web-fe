@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import heroImage from '../../assets/images/kathakali1.jpg';
 import styles from './MainPage.module.css';
 
 function HeroSection() {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
@@ -15,16 +22,12 @@ function HeroSection() {
           <Button
             label="Get Started"
             className={styles.btnPrimary}
-            onClick={() => {
-              // Nav to something, placeholder for now
-            }}
+            onClick={() => handleNavigate('/cultures')}
           />
           <Button
             label="Learn More →"
             className={styles.btnSecondary}
-            onClick={() => {
-              // Nav to something, placeholder for now
-            }}
+            onClick={() => handleNavigate('/about-us')}
           />
         </div>
       </div>
