@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import heroImage from '../../assets/images/kathakali1.jpg';
 import styles from './MainPage.module.css';
