@@ -5,10 +5,12 @@ import ContactUsPage from './pages/ContactUsPage';
 import CulturesPage from './pages/CulturesPage';
 import MainPage from './pages/MainPage/MainPage';
 import KathakaliPage from './pages/CulturesKathakaliPage';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />

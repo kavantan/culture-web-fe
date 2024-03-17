@@ -1,11 +1,5 @@
-import Navbar from '../../components/Navbar';
-
 function ContactUsPage() {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
+  return <div>hello</div>;
 }
 
 export default ContactUsPage;

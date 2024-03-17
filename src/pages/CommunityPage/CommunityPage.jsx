@@ -1,11 +1,5 @@
-import Navbar from '../../components/Navbar';
-
 function CommunityPage() {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
+  return <div>hello</div>;
 }
 
 export default CommunityPage;

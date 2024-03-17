@@ -39,7 +39,6 @@ function HeroSection() {
 function MainPage() {
   return (
     <div className={styles.mainPage}>
-      <Navbar />
       <HeroSection />
     </div>
   );

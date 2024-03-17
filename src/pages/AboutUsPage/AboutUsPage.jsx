@@ -1,11 +1,5 @@
-import Navbar from '../../components/Navbar';
-
 function AboutUsPage() {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
+  return <div>hello</div>;
 }
 
 export default AboutUsPage;

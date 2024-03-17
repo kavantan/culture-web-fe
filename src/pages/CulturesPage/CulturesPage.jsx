@@ -1,4 +1,3 @@
-import Navbar from '../../components/Navbar';
 import CultureCard from '../../components/CultureCard';
 import styles from './CulturesPage.module.css';
 import cultureImage from '../../assets/images/kathakali2.jpg';
@@ -14,7 +13,6 @@ const cultureData = [
 function CulturesPage() {
   return (
     <div className={styles.culturesPage}>
-      <Navbar />
       <h1 className={styles.pageTitle}>Cultures</h1>
       <div className={styles.cultureList}>
         {cultureData.map((culture) => (
