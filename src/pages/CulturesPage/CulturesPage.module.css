@@ -1,0 +1,13 @@
+.culturesPage {
+  background-color: #2b2d38;
+  color: #ffffff;
+}
+
+.pageTitle {
+  text-align: center;
+}
+
+.cultureList {
+  display: flex;
+  justify-content: space-around;
+}
