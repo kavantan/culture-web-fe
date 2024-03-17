@@ -1,6 +1,7 @@
 import Navbar from '../../components/Navbar';
 import styles from './KathakaliPage.module.css';
 import kathakaliImage from '../../assets/images/kathakali1.jpg';
+import ImageUploadAndDisplay from '../../components/ImageUploadAndDisplay';
 
 function KathakaliPage() {
   const handleNavigation = (e, sectionId) => {
@@ -83,9 +84,7 @@ function KathakaliPage() {
             text text text text text text text text text text text text text
             text text text text text text text text text text text
           </p>
-          <button type="button" className={styles.uploadButton}>
-            Upload
-          </button>{' '}
+          <ImageUploadAndDisplay />
           <p>
             text text text text text text text text text text text text text
             text text text text text text text text text text text text text
