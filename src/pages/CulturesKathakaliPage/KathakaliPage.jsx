@@ -35,69 +35,15 @@ function KathakaliPage() {
       <section id="overview" className={styles.section}>
         <h2>Overview</h2>
         text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text
       </section>
       <section id="algorithm1" className={styles.section}>
         <h2>Algorithm 1</h2>
         <p>
           text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text
         </p>
         <ImageUploadAndDisplay />
         <p>
           text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text
         </p>
       </section>
 
@@ -105,71 +51,17 @@ function KathakaliPage() {
         <h2>Algorithm 2</h2>
         <p>
           text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text
         </p>
         <button type="button" className={styles.uploadButton}>
           Upload
         </button>{' '}
         <p>
           text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text text text text text text text text text
-          text text text text text text
         </p>
       </section>
       <section id="connect" className={styles.section}>
         <h2>Connect</h2>
         text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
-        text text text text text text
       </section>
     </div>
   );
