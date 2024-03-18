@@ -3,7 +3,7 @@ import Button from '../../components/Button';
 import heroImage from '../../assets/images/kathakali1.jpg';
 import styles from './MainPage.module.css';
 
-function HeroSection() {
+function MainPage() {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
@@ -11,7 +11,7 @@ function HeroSection() {
   };
 
   return (
-    <section className={styles.hero}>
+    <div className={styles.hero}>
       <div className={styles.heroContent}>
         <h1>Discover the World of Cultures at CultureWeb</h1>
         <p>
@@ -21,12 +21,10 @@ function HeroSection() {
         <div className={styles.heroButtons}>
           <Button
             label="Get Started"
-            className={styles.btnPrimary}
             onClick={() => handleNavigate('/cultures')}
           />
           <Button
             label="Learn More →"
-            className={styles.btnSecondary}
             onClick={() => handleNavigate('/about-us')}
           />
         </div>
@@ -34,14 +32,6 @@ function HeroSection() {
       <div className={styles.heroImage}>
         <img src={heroImage} alt="Cultural" />
       </div>
-    </section>
-  );
-}
-
-function MainPage() {
-  return (
-    <div className={styles.mainPage}>
-      <HeroSection />
     </div>
   );
 }
