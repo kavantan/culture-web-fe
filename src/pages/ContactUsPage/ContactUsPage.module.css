@@ -1,10 +1,11 @@
-.contactUsContainer {
+.contactUsPage {
   text-align: center;
   background-color: #2b2d38;
+  padding: 20px;
   color: #ffffff;
 }
 
-.contactUsContainer p {
+.contactUsPage p {
   color: #ababab;
   font-size: 1.25vw;
 }

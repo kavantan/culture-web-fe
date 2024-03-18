@@ -3,7 +3,7 @@ import kathakaliVideo from '../../assets/videos/kathakali-video1.mp4';
 
 function AboutUsPage() {
   return (
-    <div className={styles.aboutUsContainer}>
+    <div className={styles.aboutUsPage}>
       <h1 className={styles.header}>About Us</h1>
       <div className={styles.mainContent}>
         <div className={styles.videoContainer}>

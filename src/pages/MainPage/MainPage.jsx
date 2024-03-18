@@ -11,7 +11,7 @@ function MainPage() {
   };
 
   return (
-    <div className={styles.hero}>
+    <div className={styles.mainPage}>
       <div className={styles.heroContent}>
         <h1>Discover the World of Cultures at CultureWeb</h1>
         <p>

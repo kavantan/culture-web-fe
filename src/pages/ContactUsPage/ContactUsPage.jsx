@@ -8,7 +8,7 @@ function ContactUsPage() {
   };
 
   return (
-    <div className={styles.contactUsContainer}>
+    <div className={styles.contactUsPage}>
       <h1>Contact Us</h1>
       <p>Any questions? Drop us a message!</p>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
