@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import BACKEND_URI from '../../configs/env.config';
+import styles from './ImageUploadAndDisplay.module.css';
 
 function ImageUploadAndDisplay() {
   const [image, setImage] = useState(null);
@@ -22,7 +24,7 @@ function ImageUploadAndDisplay() {
     setUploading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:3001/kathakali/', {
+      const response = await fetch(`${BACKEND_URI}/kathakali/`, {
         method: 'POST',
         body: formData,
       });
