@@ -1,0 +1,49 @@
+.contactUsContainer {
+  text-align: center;
+  background-color: #2b2d38;
+  color: #ffffff;
+}
+
+.contactUsContainer p {
+  color: #ababab;
+  font-size: 1.25vw;
+}
+
+.contactForm {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.formRow input[type='text'],
+.formRow input[type='email'],
+.formRow input[type='tel'] {
+  width: 48%;
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  height: 120px;
+}
+
+.submitButton {
+  background-color: #db2a6b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #c81f58;
+}
