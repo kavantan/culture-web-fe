@@ -20,13 +20,13 @@ function KathakaliPage() {
           type="button"
           onClick={(e) => handleNavigation(e, 'algorithm1')}
         >
-          Algorithm 1
+          Character Recognition Algorithm
         </button>
         <button
           type="button"
           onClick={(e) => handleNavigation(e, 'algorithm2')}
         >
-          Algorithm 2
+          Hand Gesture Algorithm
         </button>
         <button type="button" onClick={(e) => handleNavigation(e, 'connect')}>
           Connect
@@ -34,21 +34,27 @@ function KathakaliPage() {
       </nav>
       <section id="overview" className={styles.section}>
         <h2>Overview</h2>
-        text text text text text text text text text text text text text text
-      </section>
-      <section id="algorithm1" className={styles.section}>
-        <h2>Algorithm 1</h2>
         <p>
           text text text text text text text text text text text text text text
         </p>
+      </section>
+      <section id="algorithm1" className={styles.section}>
+        <h2>Character Recognition Algorithm</h2>
+        <p>
+          This is an AI algorithm that helps users understand the major types of
+          Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
+          Chuvanna-Thadi, Vella-Thadi and Kari-Male.
+        </p>
         <ImageUploadAndDisplay />
         <p>
-          text text text text text text text text text text text text text text
+          The algorithm uses image recognition to identify the characters and
+          display the name of the character. Simply upload an image of a
+          Kathakali character to see the result.
         </p>
       </section>
 
       <section id="algorithm2" className={styles.section}>
-        <h2>Algorithm 2</h2>
+        <h2>Hand Gesture Algorithm</h2>
         <p>
           text text text text text text text text text text text text text text
         </p>
@@ -61,7 +67,9 @@ function KathakaliPage() {
       </section>
       <section id="connect" className={styles.section}>
         <h2>Connect</h2>
-        text text text text text text text text text text text text text text
+        <p>
+          text text text text text text text text text text text text text text
+        </p>
       </section>
     </div>
   );

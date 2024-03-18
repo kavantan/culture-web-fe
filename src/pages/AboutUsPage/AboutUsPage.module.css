@@ -32,6 +32,12 @@
   text-align: left;
 }
 
+.textContainer p {
+  font-size: 1.75vw;
+  color: #ababab;
+  margin-bottom: 1rem;
+}
+
 .subHeader {
   font-size: 3vw;
   align-self: flex-start;
@@ -59,6 +65,7 @@
 .text {
   font-size: 1.5vw;
   margin-bottom: 1rem;
+  color: #ababab;
 }
 
 .link:hover {
