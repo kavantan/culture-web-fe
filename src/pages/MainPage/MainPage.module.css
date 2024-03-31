@@ -1,14 +1,10 @@
 .mainPage {
-}
-
-.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 5vw;
+  padding: 0 5vw;
   background-color: #2b2d38;
   width: 100%;
-  height: 100vh;
   box-sizing: border-box;
 }
 
@@ -33,12 +29,6 @@
 .heroButtons {
   display: flex;
   gap: 20px;
-}
-
-.btnPrimary {
-}
-
-.btnSecondary {
 }
 
 .heroImage img {
