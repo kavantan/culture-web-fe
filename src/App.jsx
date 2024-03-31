@@ -1,35 +1,30 @@
-import './App.css';
-
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import styles from './App.module.css';
+import AboutUsPage from './pages/AboutUsPage';
+import CommunityPage from './pages/CommunityPage';
+import ContactUsPage from './pages/ContactUsPage';
+import CulturesPage from './pages/CulturesPage';
+import MainPage from './pages/MainPage/MainPage';
+import KathakaliPage from './pages/CulturesKathakaliPage';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <BrowserRouter>
+      <div className={styles.container}>
+        <Navbar />
+        <div className={styles.scrollContainer}>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/cultures" element={<CulturesPage />} />
+            <Route path="/cultures/kathakali" element={<KathakaliPage />} />
+          </Routes>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount((c) => c + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </BrowserRouter>
   );
 }
 

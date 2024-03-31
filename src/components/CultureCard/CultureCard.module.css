@@ -1,0 +1,24 @@
+.card {
+  cursor: pointer;
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.cardTitle {
+  margin: 0;
+}
+
+.readMoreButton {
+  background-color: #db2a6b;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+}
