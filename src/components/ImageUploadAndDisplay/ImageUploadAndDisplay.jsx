@@ -2,16 +2,18 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import BACKEND_URI from '../../configs/env.config';
 import Modal from '../Modal';
+import charactersData from '../../assets/data/characters.json';
 import styles from './ImageUploadAndDisplay.module.css';
 
 function ImageUploadAndDisplay({ isOpen, onClose }) {
   const [image, setImage] = useState(null);
   const [uploading, setUploading] = useState(false);
-  const [output, setOutput] = useState(null);
   const [error, setError] = useState('');
+  const [characterInfo, setCharacterInfo] = useState(null);
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
+    setCharacterInfo(null);
   };
 
   const handleUploadImage = async () => {
@@ -36,7 +38,10 @@ function ImageUploadAndDisplay({ isOpen, onClose }) {
       }
 
       const result = await response.json();
-      setOutput(result?.prediction);
+      const character = charactersData.find(
+        (char) => char.name.toLowerCase() === result?.prediction.toLowerCase(),
+      );
+      setCharacterInfo(character);
     } catch (err) {
       console.error('Upload error:', err);
       setError('Failed to upload image.');
@@ -63,10 +68,17 @@ function ImageUploadAndDisplay({ isOpen, onClose }) {
           {uploading ? 'Uploading...' : 'Upload Image'}
         </button>
         {error && <p className={styles.error}>{error}</p>}
-        {output && (
+        {characterInfo && (
           <div className={styles.output}>
-            <h3>Result:</h3>
-            <p>{output}</p>
+            <h3>{characterInfo.name}</h3>
+            <p>{characterInfo.description}</p>
+            <button
+              type="button"
+              className={styles.findOutMoreButton}
+              onClick={() => window.open(characterInfo.url, '_blank')}
+            >
+              Find Out More
+            </button>
           </div>
         )}
       </div>
