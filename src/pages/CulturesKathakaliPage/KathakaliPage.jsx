@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import styles from './KathakaliPage.module.css';
 import kathakaliImage from '../../assets/images/kathakali1.jpg';
 import ImageUploadAndDisplay from '../../components/ImageUploadAndDisplay';
 
 function KathakaliPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleNavigation = (e, sectionId) => {
     e.preventDefault();
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -45,7 +49,16 @@ function KathakaliPage() {
           Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
           Chuvanna-Thadi, Vella-Thadi and Kari-Male.
         </p>
-        <ImageUploadAndDisplay />
+        <button type="button" onClick={() => setIsModalOpen(true)}>
+          Upload Image
+        </button>
+
+        {isModalOpen && (
+          <ImageUploadAndDisplay
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
         <p>
           The algorithm uses image recognition to identify the characters and
           display the name of the character. Simply upload an image of a

@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import BACKEND_URI from '../../configs/env.config';
+import Modal from '../Modal';
+import styles from './ImageUploadAndDisplay.module.css';
 
-function ImageUploadAndDisplay() {
+function ImageUploadAndDisplay({ isOpen, onClose }) {
   const [image, setImage] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [output, setOutput] = useState(null);
@@ -43,24 +46,37 @@ function ImageUploadAndDisplay() {
   };
 
   return (
-    <>
-      <div>
-        <input type="file" onChange={handleImageChange} accept="image/*" />
-        <button type="button" onClick={handleUploadImage} disabled={uploading}>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <div className={styles.imageUploadContainer}>
+        <input
+          type="file"
+          onChange={handleImageChange}
+          accept="image/*"
+          className={styles.fileInput}
+        />
+        <button
+          type="button"
+          className={styles.uploadButton}
+          onClick={handleUploadImage}
+          disabled={uploading}
+        >
           {uploading ? 'Uploading...' : 'Upload Image'}
         </button>
-      </div>
-      <div>
-        {error && <p>Error: {error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
         {output && (
-          <div>
+          <div className={styles.output}>
             <h3>Result:</h3>
             <p>{output}</p>
           </div>
         )}
       </div>
-    </>
+    </Modal>
   );
 }
+
+ImageUploadAndDisplay.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default ImageUploadAndDisplay;
