@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import BACKEND_URI from '../../configs/env.config';
-import styles from './ImageUploadAndDisplay.module.css';
 
 function ImageUploadAndDisplay() {
   const [image, setImage] = useState(null);
