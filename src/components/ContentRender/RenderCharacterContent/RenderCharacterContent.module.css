@@ -1,0 +1,16 @@
+.output {
+  margin-top: 1rem;
+}
+
+.findOutMoreButton {
+  background-color: #db2a6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.findOutMoreButton:hover {
+  background-color: #c81f58;
+}
