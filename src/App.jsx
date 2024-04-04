@@ -6,7 +6,7 @@ import ContactUsPage from './pages/ContactUsPage';
 import CulturesPage from './pages/CulturesPage';
 import MainPage from './pages/MainPage/MainPage';
 import KathakaliPage from './pages/CulturesKathakaliPage';
-import Navbar from './components/Navbar';
+import Navbar from './components/Common/Navbar';
 
 function App() {
   return (

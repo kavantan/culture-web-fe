@@ -1,4 +1,4 @@
-import CommunityCard from '../../components/CommunityCard';
+import CommunityCard from '../../components/Common/CommunityCard';
 import styles from './CommunityPage.module.css';
 
 const watchContent = [

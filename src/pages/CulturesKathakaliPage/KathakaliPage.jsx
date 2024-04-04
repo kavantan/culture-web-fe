@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import styles from './KathakaliPage.module.css';
 import kathakaliImage from '../../assets/images/kathakali1.jpg';
-import ImageUploadAndDisplay from '../../components/ImageUploadAndDisplay';
+import ImageUpload from '../../components/FileUploads/ImageUpload';
+import uploadImgToCharRecBE from '../../utils/invokeBackend';
+import RenderCharacterContent from '../../components/ContentRender/RenderCharacterContent';
 
 function KathakaliPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,9 +56,11 @@ function KathakaliPage() {
         </button>
 
         {isModalOpen && (
-          <ImageUploadAndDisplay
+          <ImageUpload
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
+            uploadFunction={uploadImgToCharRecBE}
+            renderContent={RenderCharacterContent}
           />
         )}
         <p>
