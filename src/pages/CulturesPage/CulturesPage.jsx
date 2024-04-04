@@ -1,4 +1,4 @@
-import CultureCard from '../../components/CultureCard';
+import CultureCard from '../../components/Common/CultureCard';
 import styles from './CulturesPage.module.css';
 import cultureImage from '../../assets/images/kathakali2.jpg';
 import cultureImage2 from '../../assets/images/kathakali3.jpg';

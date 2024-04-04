@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import Button from '../../components/Button';
 import heroImage from '../../assets/images/kathakali1.jpg';
 import styles from './MainPage.module.css';
 
@@ -19,14 +18,20 @@ function MainPage() {
           globe.
         </p>
         <div className={styles.heroButtons}>
-          <Button
-            label="Get Started"
+          <button
+            type="button"
+            className={styles.heroButton}
             onClick={() => handleNavigate('/cultures')}
-          />
-          <Button
-            label="Learn More →"
+          >
+            Get Started
+          </button>
+          <button
+            type="button"
+            className={styles.heroButton}
             onClick={() => handleNavigate('/about-us')}
-          />
+          >
+            Learn More →
+          </button>
         </div>
       </div>
       <div className={styles.heroImage}>
