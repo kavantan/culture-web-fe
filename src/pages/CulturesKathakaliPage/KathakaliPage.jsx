@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './KathakaliPage.module.css';
-import kathakaliImage from '../../assets/images/kathakali1.jpg';
+import kathakaliImage from '../../assets/images/kathakali-stock-images/kathakali1.jpg';
 import ImageUpload from '../../components/FileUploads/ImageUpload';
 import uploadImgToCharRecBE from '../../utils/invokeBackend';
 import RenderCharacterContent from '../../components/ContentRender/RenderCharacterContent';

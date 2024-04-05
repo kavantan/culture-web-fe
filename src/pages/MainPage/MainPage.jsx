@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../../assets/images/kathakali1.jpg';
+import heroImage from '../../assets/images/kathakali-stock-images/kathakali1.jpg';
 import styles from './MainPage.module.css';
 
 function MainPage() {

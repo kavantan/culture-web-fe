@@ -1,8 +1,8 @@
 import CultureCard from '../../components/Common/CultureCard';
 import styles from './CulturesPage.module.css';
-import cultureImage from '../../assets/images/kathakali2.jpg';
-import cultureImage2 from '../../assets/images/kathakali3.jpg';
-import cultureImage3 from '../../assets/images/kathakali4.jpg';
+import cultureImage from '../../assets/images/kathakali-stock-images/kathakali2.jpg';
+import cultureImage2 from '../../assets/images/kathakali-stock-images/kathakali3.jpg';
+import cultureImage3 from '../../assets/images/kathakali-stock-images/kathakali4.jpg';
 
 const cultureData = [
   { name: 'Kathakali', url: 'kathakali', imageUrl: cultureImage },
