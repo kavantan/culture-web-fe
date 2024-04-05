@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '../Modal';
+import Button from '../../Common/Button';
 import styles from './ImageUpload.module.css';
 
 function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
@@ -42,14 +43,13 @@ function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
           accept="image/*"
           className={styles.fileInput}
         />
-        <button
-          type="button"
+        <Button
           className={styles.uploadButton}
           onClick={handleUploadImage}
           disabled={uploading}
         >
           {uploading ? 'Uploading...' : 'Upload Image'}
-        </button>
+        </Button>
         {error && <p className={styles.error}>{error}</p>}
         {content && renderContent(content)}
       </div>

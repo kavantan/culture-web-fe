@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import styles from './KathakaliPage.module.css';
 import kathakaliImage from '../../assets/images/kathakali-stock-images/kathakali1.jpg';
 import ImageUpload from '../../components/FileUploads/ImageUpload';
 import uploadImgToCharRecBE from '../../utils/invokeBackend';
 import RenderCharacterContent from '../../components/ContentRender/RenderCharacterContent';
+import Button from '../../components/Common/Button';
+import styles from './KathakaliPage.module.css';
 
 function KathakaliPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,9 +52,7 @@ function KathakaliPage() {
           Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
           Chuvanna-Thadi, Vella-Thadi and Kari-Male.
         </p>
-        <button type="button" onClick={() => setIsModalOpen(true)}>
-          Upload Image
-        </button>
+        <Button onClick={() => setIsModalOpen(true)}>Upload Image</Button>
 
         {isModalOpen && (
           <ImageUpload
@@ -75,9 +74,7 @@ function KathakaliPage() {
         <p>
           text text text text text text text text text text text text text text
         </p>
-        <button type="button" className={styles.uploadButton}>
-          Upload
-        </button>{' '}
+        <Button>Upload</Button>
         <p>
           text text text text text text text text text text text text text text
         </p>

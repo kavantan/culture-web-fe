@@ -1,6 +1,7 @@
 import * as characterImages from './images';
 import charactersData from '../../../assets/data/characters.json';
 import toPascalCase from '../../../utils/toPascalCase';
+import Button from '../../Common/Button';
 import styles from './RenderCharacterContent.module.css';
 
 function RenderCharacterContent(output) {
@@ -35,13 +36,9 @@ function RenderCharacterContent(output) {
             </tr>
           </tbody>
         </table>
-        <button
-          type="button"
-          className={styles.findOutMoreButton}
-          onClick={() => window.open(characterInfo.url, '_blank')}
-        >
+        <Button onClick={() => window.open(characterInfo.url, '_blank')}>
           Find Out More
-        </button>
+        </Button>
       </div>
     )
   );

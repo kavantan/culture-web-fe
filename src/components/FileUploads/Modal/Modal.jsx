@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Button from '../../Common/Button';
 import styles from './Modal.module.css';
 
 function Modal({ isOpen, onClose, children }) {
@@ -26,9 +27,9 @@ function Modal({ isOpen, onClose, children }) {
         tabIndex={0}
       >
         {children}
-        <button className={styles.closeButton} onClick={onClose} type="button">
-          Close
-        </button>
+        <Button className={styles.closeButton} onClick={onClose}>
+          X
+        </Button>
       </div>
     </div>
   );
