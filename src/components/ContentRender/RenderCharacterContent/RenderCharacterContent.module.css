@@ -29,3 +29,8 @@
   display: block;
   margin: 1rem auto;
 }
+
+.characterTable {
+  width: 100%;
+  margin-bottom: 1rem;
+}
