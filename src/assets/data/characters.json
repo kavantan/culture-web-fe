@@ -1,32 +1,44 @@
 [
   {
     "name": "Red-beard",
-    "description": "Represents characters who are cruel, evil, destructive, arrogant, and killers, such as Baka, Jarasandan, and Veerabhadra.",
-    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/"
+    "shortDescription": "Represents characters who are cruel, evil, destructive, arrogant, and killers.",
+    "examples": "Baka, Jarasandan, Veerabhadra",
+    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/",
+    "imagePath": "assets/images/kathakali-characters/chuvanna-thadi.png"
   },
   {
     "name": "Kari-Male",
-    "description": "Represents evil characters, particularly demonic with a focus on the depiction of demonesses. It's noted for its black facial make-up around the eyes and nose, signifying dark and evil forces.",
-    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/"
+    "shortDescription": "Represents evil characters, particularly demonic with a focus on the depiction of demonesses. It's noted for its black facial make-up around the eyes and nose, signifying dark and evil forces.",
+    "examples": "Kaattalan",
+    "url": "https://www.indiavideo.org/kerala/arts/performing-art-forms/kathakali/kari-kathakali-make-up-899.php",
+    "imagePath": "assets/images/kathakali-characters/kari-male.png"
   },
   {
     "name": "Pacha",
-    "description": "Portrays noble characters and divine figures with green face make-up. Characters depicted in Pacha are heroic, embodying virtues and moral righteousness, such as Lord Krishna, Lord Rama, and Arjuna.",
-    "url": "https://www.keralatourism.org/artforms/kathakali-kerala-theatre/15"
+    "shortDescription": "Portrays noble characters and divine figures with green face make-up. Characters depicted in Pacha are heroic, embodying virtues and moral righteousness.",
+    "examples": "Lord Krishna, Lord Rama, Arjuna",
+    "url": "https://www.keralatourism.org/artforms/kathakali-kerala-theatre/15",
+    "imagePath": "assets/images/kathakali-characters/pacha.png"
   },
   {
     "name": "Kathi",
-    "description": "Symbolizes characters who are heroic but flawed with traits like lust, arrogance, and a desire for power. Kathi characters exhibit both nobility and negative emotions, making them complex figures in Kathakali narratives.",
-    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/"
+    "shortDescription": "Symbolizes characters who are heroic but flawed with traits like lust, arrogance, and a desire for power. Kathi characters exhibit both nobility and negative emotions, making them complex figures in Kathakali narratives.",
+    "examples": "Duryodhana, Keechaka, Ravana, Narakasura",
+    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/",
+    "imagePath": "assets/images/kathakali-characters/katha.png"
   },
   {
     "name": "White-beard",
-    "description": "Represents the character of Hanuman, the devoted monkey god. This make-up and character type signify loyalty, strength, and devotion, highlighting Hanuman's role in the Ramayana and other stories",
-    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/"
+    "shortDescription": "Represents the character of Hanuman, the devoted monkey god. This make-up and character type signify loyalty, strength, and devotion, highlighting Hanuman's role in the Ramayana and other stories",
+    "examples": "Hanuman",
+    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/",
+    "imagePath": "assets/images/kathakali-characters/vella-thadi.png"
   },
   {
     "name": "Minukku-Female",
-    "description": "Depicts women, sages, saints, and virtuous characters with softer, more natural make-up. This category includes characters that are meant to be seen as gentle, wise, or morally upright, providing a contrast to the more intensely colored and dramatic make-up of other character types.",
-    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/"
+    "shortDescription": "Depicts women, sages, saints, and virtuous characters with softer, more natural make-up. This category includes characters that are meant to be seen as gentle, wise, or morally upright, providing a contrast to the more intensely colored and dramatic make-up of other character types.",
+    "examples": "Damayanthi",
+    "url": "https://indianartz.com/2009/kathakali/the-characters-kathakali/",
+    "imagePath": "assets/images/kathakali-characters/minukku-female.png"
   }
 ]

@@ -50,18 +50,3 @@
   color: #ababab;
   font-size: 1.5vw;
 }
-
-.section button {
-  background-color: #db2a6b;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.section button:hover {
-  background-color: #c42d6f;
-}
