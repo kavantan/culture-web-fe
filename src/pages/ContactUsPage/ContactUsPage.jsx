@@ -1,3 +1,4 @@
+import Button from '../../components/Common/Button';
 import styles from './ContactUsPage.module.css';
 
 function ContactUsPage() {
@@ -20,13 +21,7 @@ function ContactUsPage() {
           <input type="tel" placeholder="Phone Number" />
         </div>
         <textarea placeholder="Write your inquiry..." required />
-        <button
-          type="button"
-          className={styles.submitButton}
-          onClick={handleSubmit}
-        >
-          Send Message
-        </button>
+        <Button onClick={handleSubmit}>Send Message</Button>
       </form>
     </div>
   );

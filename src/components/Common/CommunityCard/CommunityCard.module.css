@@ -25,19 +25,3 @@
   color: #aaaaaa;
   margin-bottom: 1rem;
 }
-
-.cardButton {
-  background-color: #db2a6b;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-.cardButton:hover {
-  background-color: #c81f58;
-}

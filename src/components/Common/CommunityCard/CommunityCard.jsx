@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Button from '../Button';
 import styles from './CommunityCard.module.css';
 
 function CommunityCard({ title, description, buttonText }) {
@@ -11,13 +12,7 @@ function CommunityCard({ title, description, buttonText }) {
       <div className={styles.cardContent}>
         <h2 className={styles.cardTitle}>{title}</h2>
         <p className={styles.cardDescription}>{description}</p>
-        <button
-          type="button"
-          className={styles.cardButton}
-          onClick={handleButtonClick}
-        >
-          {buttonText}
-        </button>
+        <Button onClick={handleButtonClick}>{buttonText}</Button>
       </div>
     </div>
   );
