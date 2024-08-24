@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button';
+import Button from 'components/Common/Button';
 import './index.css';
 
 interface CultureCardProps {

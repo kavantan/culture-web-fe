@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import styles from './App.module.css';
-import AboutUsPage from './pages/AboutUsPage';
-import CommunityPage from './pages/CommunityPage';
-import ContactUsPage from './pages/ContactUsPage';
-import CulturesPage from './pages/CulturesPage';
-import MainPage from './pages/MainPage/MainPage';
+import AboutUsPage from 'pages/AboutUsPage';
+import CommunityPage from 'pages/CommunityPage';
+import ContactUsPage from 'pages/ContactUsPage';
+import CulturesPage from 'pages/CulturesPage';
+import MainPage from 'pages/MainPage';
 import KathakaliPage from './pages/CulturesKathakaliPage';
 import Navbar from './components/Common/Navbar';
+import './app.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className={styles.container}>
+      <div className="appContainer">
         <Navbar />
-        <div className={styles.scrollContainer}>
+        <div className="scrollContainer">
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />

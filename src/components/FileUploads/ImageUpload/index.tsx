@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
+import Button from 'components/Common/Button';
 import Modal from '../Modal';
-import Button from '../../Common/Button';
 import './index.css';
 
 interface ImageUploadProps {

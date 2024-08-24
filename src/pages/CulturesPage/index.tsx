@@ -1,7 +1,7 @@
-import CultureCard from '../../components/Common/CultureCard';
-import cultureImage from '../../assets/images/kathakali-stock-images/kathakali2.jpg';
-import cultureImage2 from '../../assets/images/kathakali-stock-images/kathakali3.jpg';
-import cultureImage3 from '../../assets/images/kathakali-stock-images/kathakali4.jpg';
+import CultureCard from 'components/Common/CultureCard';
+import cultureImage from 'assets/images/kathakali-stock-images/kathakali2.jpg';
+import cultureImage2 from 'assets/images/kathakali-stock-images/kathakali3.jpg';
+import cultureImage3 from 'assets/images/kathakali-stock-images/kathakali4.jpg';
 import './index.css';
 
 const cultureData = [

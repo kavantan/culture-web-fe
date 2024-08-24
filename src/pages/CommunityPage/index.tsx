@@ -1,4 +1,4 @@
-import CommunityCard from '../../components/Common/CommunityCard';
+import CommunityCard from 'components/Common/CommunityCard';
 import './index.css';
 
 const watchContent = [

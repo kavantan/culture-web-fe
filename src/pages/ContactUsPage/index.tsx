@@ -1,5 +1,5 @@
 import React, { FormEvent } from 'react';
-import Button from '../../components/Common/Button';
+import Button from 'components/Common/Button';
 import './index.css';
 
 const ContactUsPage: React.FC = () => {

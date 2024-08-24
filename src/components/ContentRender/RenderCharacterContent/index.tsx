@@ -1,8 +1,8 @@
 import React from 'react';
+import charactersData from 'assets/data/characters.json';
+import toPascalCase from 'utils/toPascalCase';
+import Button from 'components/Common/Button';
 import * as characterImages from './images';
-import charactersData from '../../../assets/data/characters.json';
-import toPascalCase from '../../../utils/toPascalCase';
-import Button from '../../Common/Button';
 import './index.css';
 
 interface Output {

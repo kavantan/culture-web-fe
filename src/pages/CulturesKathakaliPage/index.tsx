@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import kathakaliImage from '../../assets/images/kathakali-stock-images/kathakali1.jpg';
-import ImageUpload from '../../components/FileUploads/ImageUpload';
-import uploadImgToCharRecBE from '../../utils/invokeBackend';
-import RenderCharacterContent from '../../components/ContentRender/RenderCharacterContent';
-import Button from '../../components/Common/Button';
+import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali1.jpg';
+import ImageUpload from 'components/FileUploads/ImageUpload';
+import uploadImgToCharRecBE from 'utils/invokeBackend';
+import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
+import Button from 'components/Common/Button';
 import './index.css';
 
 function KathakaliPage() {

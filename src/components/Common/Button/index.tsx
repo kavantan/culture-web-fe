@@ -15,8 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   className = '',
   type = 'button',
-}) => {
-  return (
+}) => (
     <button
       type={type}
       className={`button ${className}`}
@@ -26,6 +25,5 @@ const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
 
 export default Button;
