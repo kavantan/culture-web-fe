@@ -14,7 +14,7 @@ const CommunityCard: React.FC<CommunityCardProps> = ({
   buttonText,
 }) => {
   const handleButtonClick = () => {
-    console.log('Handle');
+    // TODO: Implement button click functionality
   };
 
   return (

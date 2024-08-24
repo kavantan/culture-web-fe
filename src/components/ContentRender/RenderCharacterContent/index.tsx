@@ -2,12 +2,9 @@ import React from 'react';
 import charactersData from 'assets/data/characters.json';
 import toPascalCase from 'utils/toPascalCase';
 import Button from 'components/Common/Button';
+import { Prediction } from 'types/interface';
 import * as characterImages from './images';
 import './index.css';
-
-interface Output {
-  prediction: string;
-}
 
 interface Character {
   name: string;
@@ -17,10 +14,12 @@ interface Character {
   imagePath: string;
 }
 
-const RenderCharacterContent: React.FC<{ output: Output }> = ({ output }) => {
+const RenderCharacterContent: React.FC<{ prediction: Prediction }> = ({
+  prediction,
+}) => {
   const characterInfo = charactersData.find(
     (char: Character) =>
-      char.name.toLowerCase() === output?.prediction.toLowerCase(),
+      char.name.toLowerCase() === prediction?.prediction.toLowerCase(),
   );
 
   const characterImage =

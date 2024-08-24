@@ -22,10 +22,29 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'react-hooks'],
   rules: {
     '@typescript-eslint/consistent-type-assertions': 'warn',
+    'react/function-component-definition': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
   },
   overrides: [
@@ -33,6 +52,17 @@ module.exports = {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
         'react/prop-types': 'off',
+      },
+    },
+    {
+      files: ['vite.config.ts'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: true,
+          },
+        ],
       },
     },
   ],

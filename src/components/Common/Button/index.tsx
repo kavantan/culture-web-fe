@@ -16,14 +16,14 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   type = 'button',
 }) => (
-    <button
-      type={type}
-      className={`button ${className}`}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {children}
-    </button>
-  );
+  <button
+    type={type} // eslint-disable-line react/button-has-type
+    className={`button ${className}`}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {children}
+  </button>
+);
 
 export default Button;

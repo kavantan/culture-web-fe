@@ -1,13 +1,14 @@
 import React, { useState, ChangeEvent } from 'react';
 import Button from 'components/Common/Button';
+import { Prediction } from 'types/interface';
 import Modal from '../Modal';
 import './index.css';
 
 interface ImageUploadProps {
   isOpen: boolean;
   onClose: () => void;
-  renderContent: (content: any) => JSX.Element;
-  uploadFunction: (file: File) => Promise<any>;
+  renderContent: (prediction: Prediction) => JSX.Element;
+  uploadFunction: (file: File) => Promise<Prediction>;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -19,7 +20,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   const [image, setImage] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
-  const [content, setContent] = useState<any>(null);
+  const [content, setContent] = useState<Prediction | null>(null);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -30,18 +31,20 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 
   const handleUploadImage = async () => {
     if (!image) {
-      console.error('Please select an image first.');
+      setError('Please select an image first.');
       return;
     }
 
     setUploading(true);
     setError('');
     try {
-      const output = await uploadFunction(image);
-      setContent(output);
-    } catch (err: any) {
-      console.error('Upload error:', err);
-      setError(err.message);
+      const prediction = await uploadFunction(image);
+      setContent(prediction);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        // TODO: Show error message
+        setError(err.message);
+      }
     } finally {
       setUploading(false);
     }

@@ -64,8 +64,8 @@ function KathakaliPage() {
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             uploadFunction={uploadImgToCharRecBE}
-            renderContent={(output) => (
-              <RenderCharacterContent output={output} />
+            renderContent={(prediction) => (
+              <RenderCharacterContent prediction={prediction} />
             )}
           />
         )}
