@@ -6,7 +6,7 @@ import './index.css';
 function MainPage() {
   const navigate = useNavigate();
 
-  const handleNavigate = (path) => {
+  const handleNavigate = (path: string) => {
     navigate(path);
   };
 

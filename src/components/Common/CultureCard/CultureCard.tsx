@@ -1,9 +1,15 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
 import './index.css';
 
-function CultureCard({ name, url, imageUrl }) {
+interface CultureCardProps {
+  name: string;
+  url: string;
+  imageUrl: string;
+}
+
+const CultureCard: React.FC<CultureCardProps> = ({ name, url, imageUrl }) => {
   const navigate = useNavigate();
 
   const navigateToCulture = () => {
@@ -25,12 +31,6 @@ function CultureCard({ name, url, imageUrl }) {
       </div>
     </div>
   );
-}
-
-CultureCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
 };
 
 export default CultureCard;

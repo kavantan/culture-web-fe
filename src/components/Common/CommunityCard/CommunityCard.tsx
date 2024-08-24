@@ -1,8 +1,18 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import Button from '../Button';
 import './index.css';
 
-function CommunityCard({ title, description, buttonText }) {
+interface CommunityCardProps {
+  title: string;
+  description: string;
+  buttonText: string;
+}
+
+const CommunityCard: React.FC<CommunityCardProps> = ({
+  title,
+  description,
+  buttonText,
+}) => {
   const handleButtonClick = () => {
     console.log('Handle');
   };
@@ -16,12 +26,6 @@ function CommunityCard({ title, description, buttonText }) {
       </div>
     </div>
   );
-}
-
-CommunityCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
 };
 
 export default CommunityCard;

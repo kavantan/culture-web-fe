@@ -4,7 +4,7 @@ import './index.css';
 function Navbar() {
   const navigate = useNavigate();
 
-  const handleNavigate = (path) => {
+  const handleNavigate = (path: string) => {
     navigate(path);
   };
 

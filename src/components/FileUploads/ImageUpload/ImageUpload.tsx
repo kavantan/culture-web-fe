@@ -1,18 +1,31 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, ChangeEvent } from 'react';
 import Modal from '../Modal';
 import Button from '../../Common/Button';
 import './index.css';
 
-function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
-  const [image, setImage] = useState(null);
+interface ImageUploadProps {
+  isOpen: boolean;
+  onClose: () => void;
+  renderContent: (content: any) => JSX.Element;
+  uploadFunction: (file: File) => Promise<any>;
+}
+
+const ImageUpload: React.FC<ImageUploadProps> = ({
+  isOpen,
+  onClose,
+  renderContent,
+  uploadFunction,
+}) => {
+  const [image, setImage] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState<any>(null);
 
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-    setContent(null);
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setImage(e.target.files[0]);
+      setContent(null);
+    }
   };
 
   const handleUploadImage = async () => {
@@ -26,7 +39,7 @@ function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
     try {
       const output = await uploadFunction(image);
       setContent(output);
-    } catch (err) {
+    } catch (err: any) {
       console.error('Upload error:', err);
       setError(err.message);
     } finally {
@@ -55,13 +68,6 @@ function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
       </div>
     </Modal>
   );
-}
-
-ImageUpload.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  renderContent: PropTypes.func.isRequired,
-  uploadFunction: PropTypes.func.isRequired,
 };
 
 export default ImageUpload;

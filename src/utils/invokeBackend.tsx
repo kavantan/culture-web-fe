@@ -1,6 +1,6 @@
 import BACKEND_URI from '../configs/env.config';
 
-const uploadImgToCharRecBE = async (imageFile) => {
+const uploadImgToCharRecBE = async (imageFile: File): Promise<any> => {
   const formData = new FormData();
   formData.append('image', imageFile);
 

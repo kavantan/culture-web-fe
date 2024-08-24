@@ -9,10 +9,15 @@ import './index.css';
 function KathakaliPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleNavigation = (e, sectionId) => {
+  const handleNavigation = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    sectionId: string,
+  ) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -59,7 +64,9 @@ function KathakaliPage() {
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             uploadFunction={uploadImgToCharRecBE}
-            renderContent={RenderCharacterContent}
+            renderContent={(output) => (
+              <RenderCharacterContent output={output} />
+            )}
           />
         )}
         <p>

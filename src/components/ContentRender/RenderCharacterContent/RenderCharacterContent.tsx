@@ -1,16 +1,32 @@
+import React from 'react';
 import * as characterImages from './images';
 import charactersData from '../../../assets/data/characters.json';
 import toPascalCase from '../../../utils/toPascalCase';
 import Button from '../../Common/Button';
 import './index.css';
 
-function RenderCharacterContent(output) {
+interface Output {
+  prediction: string;
+}
+
+interface Character {
+  name: string;
+  shortDescription: string;
+  examples: string;
+  url: string;
+  imagePath: string;
+}
+
+const RenderCharacterContent: React.FC<{ output: Output }> = ({ output }) => {
   const characterInfo = charactersData.find(
-    (char) => char.name.toLowerCase() === output?.prediction.toLowerCase(),
+    (char: Character) =>
+      char.name.toLowerCase() === output?.prediction.toLowerCase(),
   );
 
   const characterImage =
-    characterImages[toPascalCase(characterInfo?.name || '')];
+    characterImages[
+      toPascalCase(characterInfo?.name || '') as keyof typeof characterImages
+    ];
 
   return (
     characterInfo && (
@@ -42,6 +58,6 @@ function RenderCharacterContent(output) {
       </div>
     )
   );
-}
+};
 
 export default RenderCharacterContent;

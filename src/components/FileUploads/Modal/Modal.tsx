@@ -1,11 +1,17 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import Button from '../../Common/Button';
 import './index.css';
 
-function Modal({ isOpen, onClose, children }) {
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter') {
       onClose();
     }
@@ -33,12 +39,6 @@ function Modal({ isOpen, onClose, children }) {
       </div>
     </div>
   );
-}
-
-Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
 };
 
 export default Modal;

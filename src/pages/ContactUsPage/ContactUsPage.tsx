@@ -1,10 +1,11 @@
+import React, { FormEvent } from 'react';
 import Button from '../../components/Common/Button';
 import './index.css';
 
-function ContactUsPage() {
-  const handleSubmit = (event) => {
+const ContactUsPage: React.FC = () => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission
+    // TODO: Handle form submission
   };
 
   return (
@@ -21,10 +22,10 @@ function ContactUsPage() {
           <input type="tel" placeholder="Phone Number" />
         </div>
         <textarea placeholder="Write your inquiry..." required />
-        <Button onClick={handleSubmit}>Send Message</Button>
+        <Button type="submit">Send Message</Button>
       </form>
     </div>
   );
-}
+};
 
 export default ContactUsPage;
