@@ -1,49 +1,49 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './Navbar.module.css';
+import './index.css';
 
 function Navbar() {
   const navigate = useNavigate();
 
-  const handleNavigate = (path) => {
+  const handleNavigate = (path: string) => {
     navigate(path);
   };
 
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logo}>CultureWeb</div>
-      <div className={styles.navLinks}>
+    <nav className="navbar">
+      <div className="logo">CultureWeb</div>
+      <div className="navLinks">
         <button
           type="button"
           onClick={() => handleNavigate('/')}
-          className={styles.navItem}
+          className="navItem"
         >
           Home
         </button>
         <button
           type="button"
           onClick={() => handleNavigate('/cultures')}
-          className={styles.navItem}
+          className="navItem"
         >
           Cultures
         </button>
         <button
           type="button"
           onClick={() => handleNavigate('/about-us')}
-          className={styles.navItem}
+          className="navItem"
         >
           About Us
         </button>
         <button
           type="button"
           onClick={() => handleNavigate('/community')}
-          className={styles.navItem}
+          className="navItem"
         >
           Community
         </button>
         <button
           type="button"
           onClick={() => handleNavigate('/contact-us')}
-          className={styles.navItem}
+          className="navItem"
         >
           Contact Us
         </button>

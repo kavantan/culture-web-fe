@@ -1,6 +1,7 @@
-import BACKEND_URI from '../configs/env.config';
+import BACKEND_URI from 'configs/env.config';
+import { Prediction } from 'types/interface';
 
-const uploadImgToCharRecBE = async (imageFile) => {
+const uploadImgToCharRecBE = async (imageFile: File): Promise<Prediction> => {
   const formData = new FormData();
   formData.append('image', imageFile);
 
@@ -12,7 +13,6 @@ const uploadImgToCharRecBE = async (imageFile) => {
   if (!response.ok) {
     throw new Error('Failed to upload image.');
   }
-
   return response.json();
 };
 

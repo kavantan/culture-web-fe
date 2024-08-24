@@ -1,26 +1,41 @@
+import React from 'react';
+import charactersData from 'assets/data/characters.json';
+import toPascalCase from 'utils/toPascalCase';
+import Button from 'components/Common/Button';
+import { Prediction } from 'types/interface';
 import * as characterImages from './images';
-import charactersData from '../../../assets/data/characters.json';
-import toPascalCase from '../../../utils/toPascalCase';
-import Button from '../../Common/Button';
-import styles from './RenderCharacterContent.module.css';
+import './index.css';
 
-function RenderCharacterContent(output) {
+interface Character {
+  name: string;
+  shortDescription: string;
+  examples: string;
+  url: string;
+  imagePath: string;
+}
+
+const RenderCharacterContent: React.FC<{ prediction: Prediction }> = ({
+  prediction,
+}) => {
   const characterInfo = charactersData.find(
-    (char) => char.name.toLowerCase() === output?.prediction.toLowerCase(),
+    (char: Character) =>
+      char.name.toLowerCase() === prediction?.prediction.toLowerCase(),
   );
 
   const characterImage =
-    characterImages[toPascalCase(characterInfo?.name || '')];
+    characterImages[
+      toPascalCase(characterInfo?.name || '') as keyof typeof characterImages
+    ];
 
   return (
     characterInfo && (
-      <div className={styles.output}>
+      <div className="output">
         <img
           src={characterImage}
           alt={characterInfo.name}
-          className={styles.characterImage}
+          className="characterImage"
         />
-        <table className={styles.characterTable}>
+        <table className="characterTable">
           <tbody>
             <tr>
               <th>Name:</th>
@@ -42,6 +57,6 @@ function RenderCharacterContent(output) {
       </div>
     )
   );
-}
+};
 
 export default RenderCharacterContent;

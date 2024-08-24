@@ -1,8 +1,8 @@
-import CultureCard from '../../components/Common/CultureCard';
-import styles from './CulturesPage.module.css';
-import cultureImage from '../../assets/images/kathakali-stock-images/kathakali2.jpg';
-import cultureImage2 from '../../assets/images/kathakali-stock-images/kathakali3.jpg';
-import cultureImage3 from '../../assets/images/kathakali-stock-images/kathakali4.jpg';
+import CultureCard from 'components/Common/CultureCard';
+import cultureImage from 'assets/images/kathakali-stock-images/kathakali2.jpg';
+import cultureImage2 from 'assets/images/kathakali-stock-images/kathakali3.jpg';
+import cultureImage3 from 'assets/images/kathakali-stock-images/kathakali4.jpg';
+import './index.css';
 
 const cultureData = [
   { name: 'Kathakali', url: 'kathakali', imageUrl: cultureImage },
@@ -12,9 +12,9 @@ const cultureData = [
 
 function CulturesPage() {
   return (
-    <div className={styles.culturesPage}>
-      <h1 className={styles.pageTitle}>Cultures</h1>
-      <div className={styles.cultureList}>
+    <div className="culturesPage">
+      <h1 className="pageTitle">Cultures</h1>
+      <div className="cultureList">
         {cultureData.map((culture) => (
           <CultureCard
             key={culture.name}
