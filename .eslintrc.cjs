@@ -1,43 +1,39 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   extends: [
     'airbnb',
-    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:import/recommended',
-    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
+  rules: {
+    '@typescript-eslint/consistent-type-assertions': 'warn',
+  },
   settings: {
-    'import/extensions': ['js', 'jsx'],
-    react: { version: '18.2' },
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx'],
-      },
+    react: {
+      version: 'detect',
     },
   },
-  plugins: ['prettier', 'react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    'prettier/prettier': 'error',
-    'no-unused-vars': 'warn',
-    'no-console': 'off',
-    'func-names': 'off',
-    'no-process-exit': 'off',
-    'object-shorthand': 'off',
-    'class-methods-use-this': 'off',
-    'import/no-extraneous-dependencies': [
-      'error',
-      { devDependencies: ['vite.config.js'] },
-    ],
-  },
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
+  ],
 };

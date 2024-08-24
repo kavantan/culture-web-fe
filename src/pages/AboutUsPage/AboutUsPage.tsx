@@ -1,37 +1,35 @@
-import styles from './AboutUsPage.module.css';
 import kathakaliVideo from '../../assets/videos/kathakali-video1.mp4';
+import './index.css';
 
 function AboutUsPage() {
   return (
-    <div className={styles.aboutUsPage}>
-      <h1 className={styles.header}>About Us</h1>
-      <div className={styles.mainContent}>
-        <div className={styles.videoContainer}>
-          <video controls className={styles.video}>
+    <div className="aboutUsPage">
+      <h1 className="header">About Us</h1>
+      <div className="mainContent">
+        <div className="videoContainer">
+          <video controls className="video">
             <source src={kathakaliVideo} type="video/mp4" />
             <track kind="captions" src="captions.vtt" label="English" />
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className={styles.textContainer}>
-          <h2 className={styles.subHeader}>
-            Learn More about Different Cultures
-          </h2>
+        <div className="textContainer">
+          <h2 className="subHeader">Learn More about Different Cultures</h2>
           <p>
             CultureWeb has many resources that teach you more about different
             cultures.
           </p>
-          <div className={styles.cultureLinks}>
-            <a href="/cultures/kathakali" className={styles.link}>
+          <div className="cultureLinks">
+            <a href="/cultures/kathakali" className="link">
               Kathakali
             </a>
-            <p className={styles.text}>
+            <p className="text">
               Kathakali is a... sample text sample text sample text
             </p>
-            <a href="/cultures/culture2" className={styles.link}>
+            <a href="/cultures/culture2" className="link">
               Culture 2
             </a>
-            <p className={styles.text}>
+            <p className="text">
               Culture 2 is a... sample text sample text sample text
             </p>
           </div>

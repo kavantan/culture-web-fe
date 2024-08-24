@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import styles from './CommunityCard.module.css';
+import './index.css';
 
 function CommunityCard({ title, description, buttonText }) {
   const handleButtonClick = () => {
@@ -8,10 +8,10 @@ function CommunityCard({ title, description, buttonText }) {
   };
 
   return (
-    <div className={styles.card}>
-      <div className={styles.cardContent}>
-        <h2 className={styles.cardTitle}>{title}</h2>
-        <p className={styles.cardDescription}>{description}</p>
+    <div className="card">
+      <div className="cardContent">
+        <h2 className="cardTitle">{title}</h2>
+        <p className="cardDescription">{description}</p>
         <Button onClick={handleButtonClick}>{buttonText}</Button>
       </div>
     </div>

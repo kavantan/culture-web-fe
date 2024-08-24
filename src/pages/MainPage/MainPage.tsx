@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import heroImage from '../../assets/images/kathakali-stock-images/kathakali1.jpg';
 import Button from '../../components/Common/Button';
-import styles from './MainPage.module.css';
+import './index.css';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -11,14 +11,14 @@ function MainPage() {
   };
 
   return (
-    <div className={styles.mainPage}>
-      <div className={styles.heroContent}>
+    <div className="mainPage">
+      <div className="heroContent">
         <h1>Discover the World of Cultures at CultureWeb</h1>
         <p>
           Experience the beauty and diversity of cultures from all around the
           globe.
         </p>
-        <div className={styles.heroButtons}>
+        <div className="heroButtons">
           <Button onClick={() => handleNavigate('/cultures')}>
             Get Started
           </Button>
@@ -27,7 +27,7 @@ function MainPage() {
           </Button>
         </div>
       </div>
-      <div className={styles.heroImage}>
+      <div className="heroImage">
         <img src={heroImage} alt="Cultural" />
       </div>
     </div>

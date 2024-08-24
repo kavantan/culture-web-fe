@@ -1,13 +1,9 @@
 import PropTypes from 'prop-types';
-import styles from './Button.module.css';
+import './index.css';
 
 function Button({ onClick, children, className = '' }) {
   return (
-    <button
-      type="button"
-      className={`${styles.button} ${className}`}
-      onClick={onClick}
-    >
+    <button type="button" className={`button ${className}`} onClick={onClick}>
       {children}
     </button>
   );

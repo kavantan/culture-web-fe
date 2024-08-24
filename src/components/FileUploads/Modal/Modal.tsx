@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Button from '../../Common/Button';
-import styles from './Modal.module.css';
+import './index.css';
 
 function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
@@ -13,21 +13,21 @@ function Modal({ isOpen, onClose, children }) {
 
   return (
     <div
-      className={styles.modalOverlay}
+      className="modalOverlay"
       onClick={onClose}
       onKeyDown={handleKeyDown}
       role="button"
       tabIndex={0}
     >
       <div
-        className={styles.modalContent}
+        className="modalContent"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={handleKeyDown}
         role="button"
         tabIndex={0}
       >
         {children}
-        <Button className={styles.closeButton} onClick={onClose}>
+        <Button className="closeButton" onClick={onClose}>
           X
         </Button>
       </div>

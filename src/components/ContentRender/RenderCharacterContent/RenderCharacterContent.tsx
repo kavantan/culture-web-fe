@@ -2,7 +2,7 @@ import * as characterImages from './images';
 import charactersData from '../../../assets/data/characters.json';
 import toPascalCase from '../../../utils/toPascalCase';
 import Button from '../../Common/Button';
-import styles from './RenderCharacterContent.module.css';
+import './index.css';
 
 function RenderCharacterContent(output) {
   const characterInfo = charactersData.find(
@@ -14,13 +14,13 @@ function RenderCharacterContent(output) {
 
   return (
     characterInfo && (
-      <div className={styles.output}>
+      <div className="output">
         <img
           src={characterImage}
           alt={characterInfo.name}
-          className={styles.characterImage}
+          className="characterImage"
         />
-        <table className={styles.characterTable}>
+        <table className="characterTable">
           <tbody>
             <tr>
               <th>Name:</th>

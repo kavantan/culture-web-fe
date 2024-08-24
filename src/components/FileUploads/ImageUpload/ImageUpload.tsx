@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '../Modal';
 import Button from '../../Common/Button';
-import styles from './ImageUpload.module.css';
+import './index.css';
 
 function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
   const [image, setImage] = useState(null);
@@ -36,21 +36,21 @@ function ImageUpload({ isOpen, onClose, renderContent, uploadFunction }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className={styles.imageUploadContainer}>
+      <div className="imageUploadContainer">
         <input
           type="file"
           onChange={handleImageChange}
           accept="image/*"
-          className={styles.fileInput}
+          className="fileInput"
         />
         <Button
-          className={styles.uploadButton}
+          className="uploadButton"
           onClick={handleUploadImage}
           disabled={uploading}
         >
           {uploading ? 'Uploading...' : 'Upload Image'}
         </Button>
-        {error && <p className={styles.error}>{error}</p>}
+        {error && <p className="error">{error}</p>}
         {content && renderContent(content)}
       </div>
     </Modal>

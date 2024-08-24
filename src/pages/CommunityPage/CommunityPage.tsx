@@ -1,5 +1,5 @@
 import CommunityCard from '../../components/Common/CommunityCard';
-import styles from './CommunityPage.module.css';
+import './index.css';
 
 const watchContent = [
   {
@@ -34,12 +34,12 @@ const readContent = [
 
 function CommunityPage() {
   return (
-    <div className={styles.communityPage}>
-      <h1 className={styles.header}>Community</h1>
+    <div className="communityPage">
+      <h1 className="header">Community</h1>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionHeader}>Hi there!</h2>
-        <div className={styles.cardsContainer}>
+      <div className="section">
+        <h2 className="sectionHeader">Hi there!</h2>
+        <div className="cardsContainer">
           {watchContent.map((content) => (
             <CommunityCard
               key={content.title}
@@ -51,9 +51,9 @@ function CommunityPage() {
         </div>
       </div>
 
-      <div className={styles.section}>
-        <h2 className={styles.sectionHeader}>Resources</h2>
-        <div className={styles.cardsContainer}>
+      <div className="section">
+        <h2 className="sectionHeader">Resources</h2>
+        <div className="cardsContainer">
           {readContent.map((content) => (
             <CommunityCard
               key={content.title}
