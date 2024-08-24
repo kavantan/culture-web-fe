@@ -4,7 +4,7 @@ const uploadImgToCharRecBE = async (imageFile) => {
   const formData = new FormData();
   formData.append('image', imageFile);
 
-  const response = await fetch(`${BACKEND_URI}/kathakali/`, {
+  const response = await fetch(`${BACKEND_URI}`, {
     method: 'POST',
     body: formData,
   });
