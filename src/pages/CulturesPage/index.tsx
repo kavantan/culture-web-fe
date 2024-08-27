@@ -1,5 +1,5 @@
 import CultureCard from 'components/Common/CultureCard';
-import { cultureData } from './content';
+import cultureData from './content';
 import './index.css';
 
 function CulturesPage() {
