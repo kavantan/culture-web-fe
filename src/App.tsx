@@ -6,6 +6,7 @@ import CulturesPage from 'pages/CulturesPage';
 import MainPage from 'pages/MainPage';
 import KathakaliPage from './pages/CulturesKathakaliPage';
 import Navbar from './components/Common/Navbar';
+import './styles';
 import './app.css';
 
 function App() {

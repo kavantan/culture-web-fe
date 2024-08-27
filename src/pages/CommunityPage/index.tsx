@@ -1,45 +1,14 @@
 import CommunityCard from 'components/Common/CommunityCard';
+import { watchContent, readContent } from './content';
 import './index.css';
-
-const watchContent = [
-  {
-    title: 'Kathakali',
-    description: 'Watch a video on Kathakali here!',
-    buttonText: 'Watch here',
-  },
-  {
-    title: 'Culture 2',
-    description: 'Watch a video on Culture 2 here!',
-    buttonText: 'Watch here',
-  },
-];
-
-const readContent = [
-  {
-    title: 'Kathakali',
-    description: 'Learn more about Kathakali here!',
-    buttonText: 'Read here',
-  },
-  {
-    title: 'Culture 2',
-    description: 'Learn more about Culture 2 here!',
-    buttonText: 'Read here',
-  },
-  {
-    title: 'Culture 3',
-    description: 'Learn more about Culture 3 here!',
-    buttonText: 'Read here',
-  },
-];
 
 function CommunityPage() {
   return (
-    <div className="communityPage">
-      <h1 className="header">Community</h1>
-
-      <div className="section">
-        <h2 className="sectionHeader">Hi there!</h2>
-        <div className="cardsContainer">
+    <div className="mb64">
+      <div className="font-64 white mb32">Community</div>
+      <div className="mb32">
+        <div className="font-32 white mb16">Hi there!</div>
+        <div className="flex justify-center gap-32">
           {watchContent.map((content) => (
             <CommunityCard
               key={content.title}
@@ -50,10 +19,9 @@ function CommunityPage() {
           ))}
         </div>
       </div>
-
-      <div className="section">
-        <h2 className="sectionHeader">Resources</h2>
-        <div className="cardsContainer">
+      <div>
+        <div className="font-32 white mb16">Resources</div>
+        <div className="flex justify-center gap-32">
           {readContent.map((content) => (
             <CommunityCard
               key={content.title}

@@ -11,14 +11,16 @@ function MainPage() {
   };
 
   return (
-    <div className="mainPage">
-      <div className="heroContent">
-        <h1>Discover the World of Cultures at CultureWeb</h1>
-        <p>
+    <div className="flex-between align-center gap-64">
+      <div className="mx-auto">
+        <div className="font-64 white">
+          Discover the World of Cultures at CultureWeb
+        </div>
+        <div className="font-32 gray my16">
           Experience the beauty and diversity of cultures from all around the
           globe.
-        </p>
-        <div className="heroButtons">
+        </div>
+        <div className="flex gap-32 my16">
           <Button onClick={() => handleNavigate('/cultures')}>
             Get Started
           </Button>
@@ -27,9 +29,7 @@ function MainPage() {
           </Button>
         </div>
       </div>
-      <div className="heroImage">
-        <img src={heroImage} alt="Cultural" />
-      </div>
+      <img src={heroImage} alt="Cultural" />
     </div>
   );
 }
