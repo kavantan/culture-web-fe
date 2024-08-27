@@ -1,36 +1,11 @@
 .output {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.findOutMoreButton {
-  background-color: #db2a6b;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.findOutMoreButton:hover {
-  background-color: #c81f58;
 }
 
 .characterImage {
+  display: block;
   max-width: 100%;
   max-height: 50vh;
   object-fit: contain;
-  display: block;
   margin: 1rem auto;
-}
-
-.characterTable {
-  width: 100%;
-  margin-bottom: 1rem;
 }
