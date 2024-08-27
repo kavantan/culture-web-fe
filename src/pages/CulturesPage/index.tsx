@@ -6,7 +6,7 @@ function CulturesPage() {
   return (
     <div className="mb64">
       <div className="font-64 white mb32">Cultures</div>
-      <div className="flex-between">
+      <div className="flex-center gap-64">
         {cultureData.map((culture) => (
           <CultureCard
             key={culture.name}

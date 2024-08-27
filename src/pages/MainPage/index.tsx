@@ -16,13 +16,13 @@ function MainPage() {
       <div className="flex-between align-center gap-64">
         <div className="mx-auto">
           <div className="font-64 white">
-            Discover the World of Cultures at CultureWeb
+            Discover the World of Cultures at MusAIca
           </div>
           <div className="font-32 gray my16">
             Experience the beauty and diversity of cultures from all around the
             globe.
           </div>
-          <div className="flex gap-32 my16">
+          <div className="flex-center gap-32 my16">
             <Button onClick={() => handleNavigate('/cultures')}>
               Get Started
             </Button>

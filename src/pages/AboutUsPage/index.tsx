@@ -5,7 +5,7 @@ function AboutUsPage() {
   return (
     <div className="mb64">
       <div className="font-64 white mb32">About Us</div>
-      <div className="flex gap-32">
+      <div className="flex-center gap-32">
         <div>
           <video controls className="video">
             <source src={kathakaliVideo} type="video/mp4" />
@@ -18,7 +18,7 @@ function AboutUsPage() {
             Learn More about Different Cultures
           </div>
           <div className="font-24 text-left gray mb16">
-            CultureWeb has many resources that teach you more about different
+            MusAIca has many resources that teach you more about different
             cultures.
           </div>
           <div className="flex-column">

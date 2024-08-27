@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className="navbar flex-between align-center px-64 py-16">
-      <div className="font-24 font-bold red">CultureWeb</div>
+      <div className="font-24 font-bold red">MusAIca</div>
       <div className="font-20">
         <button
           type="button"
