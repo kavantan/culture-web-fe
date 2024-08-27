@@ -29,13 +29,13 @@ const RenderCharacterContent: React.FC<{ prediction: Prediction }> = ({
 
   return (
     characterInfo && (
-      <div className="output">
+      <div className="output flex-column align-center text-center mx-auto mt16">
         <img
           src={characterImage}
           alt={characterInfo.name}
           className="characterImage"
         />
-        <table className="characterTable">
+        <table className="mb16">
           <tbody>
             <tr>
               <th>Name:</th>
