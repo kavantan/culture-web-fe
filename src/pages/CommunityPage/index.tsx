@@ -4,11 +4,11 @@ import './index.css';
 
 function CommunityPage() {
   return (
-    <div className="mb64">
-      <div className="font-64 white mb32">Community</div>
-      <div className="mb32">
-        <div className="font-32 white mb16">Hi there!</div>
-        <div className="flex justify-center gap-32">
+    <div className="mb-xlarge">
+      <div className="font-4xlarge white mb-large">Community</div>
+      <div className="mb-large">
+        <div className="font-2xlarge white mb-base">Hi there!</div>
+        <div className="flex justify-center gap-large">
           {watchContent.map((content) => (
             <CommunityCard
               key={content.title}
@@ -20,8 +20,8 @@ function CommunityPage() {
         </div>
       </div>
       <div>
-        <div className="font-32 white mb16">Resources</div>
-        <div className="flex justify-center gap-32">
+        <div className="font-2xlarge white mb-base">Resources</div>
+        <div className="flex justify-center gap-large">
           {readContent.map((content) => (
             <CommunityCard
               key={content.title}

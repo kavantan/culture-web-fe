@@ -12,15 +12,15 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar flex-between align-center px-64 py-16">
+    <nav className="navbar flex-between align-center px-xlarge py-base">
       <button
         type="button"
         onClick={() => handleNavigate('/')}
-        className="font-24 text-only-button red font-bold"
+        className="font-xlarge text-only-button red font-bold"
       >
         MusAIca
       </button>
-      <div className={`nav-links font-20 ${isOpen ? 'active' : ''}`}>
+      <div className={`nav-links font-large ${isOpen ? 'active' : ''}`}>
         <button
           type="button"
           onClick={() => handleNavigate('/')}
@@ -58,7 +58,7 @@ function Navbar() {
         </button>
       </div>
       <div className="menu" onClick={() => setIsOpen(!isOpen)}>
-        <span>Menu</span>
+        <span className="font-xlarge">Menu</span>
       </div>
     </nav>
   );

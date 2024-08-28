@@ -19,71 +19,71 @@
 .justify-center {
   justify-content: center;
 }
-.gap-16 {
-  gap: 16px;
+.gap-base {
+  gap: 1rem;
 }
-.gap-32 {
-  gap: 32px;
+.gap-large {
+  gap: 2rem;
 }
-.gap-64 {
-  gap: 64px;
+.gap-xlarge {
+  gap: 4rem;
 }
-.p-16 {
-  padding: 16px;
+.p-base {
+  padding: 1rem;
 }
-.p-32 {
-  padding: 32px;
+.p-large {
+  padding: 2rem;
 }
-.px-64 {
-  padding-left: 64px;
-  padding-right: 64px;
+.px-xlarge {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
-.py-16 {
-  padding-top: 16px;
-  padding-bottom: 16px;
+.py-base {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .mx-auto {
   margin: 0 auto;
 }
-.my16 {
-  margin-top: 16px;
-  margin-bottom: 16px;
+.my-small {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-.mt16 {
-  margin-top: 16px;
+.mt-base {
+  margin-top: 1rem;
 }
-.mb8 {
-  margin-bottom: 8px;
+.mb-small {
+  margin-bottom: 0.5rem;
 }
-.mb16 {
-  margin-bottom: 16px;
+.mb-base {
+  margin-bottom: 1rem;
 }
-.mb32 {
-  margin-bottom: 32px;
+.mb-large {
+  margin-bottom: 2rem;
 }
-.mb64 {
-  margin-bottom: 64px;
+.mb-xlarge {
+  margin-bottom: 4rem;
 }
 .font-bold {
   font-weight: bold;
 }
-.font-16 {
-  font-size: 16px;
+.font-base {
+  font-size: 1rem;
 }
-.font-20 {
-  font-size: 20px;
+.font-large {
+  font-size: 1.25rem;
 }
-.font-24 {
-  font-size: 24px;
+.font-xlarge {
+  font-size: 1.5rem;
 }
-.font-32 {
-  font-size: 32px;
+.font-2xlarge {
+  font-size: 2rem;
 }
-.font-48 {
-  font-size: 48px;
+.font-3xlarge {
+  font-size: 3rem;
 }
-.font-64 {
-  font-size: 64px;
+.font-4xlarge {
+  font-size: 4rem;
 }
 .text-left {
   text-align: left;
@@ -147,4 +147,70 @@
 }
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .gap-small {
+    gap: 0.25rem;
+  }
+  .gap-base {
+    gap: 0.5rem;
+  }
+  .gap-large {
+    gap: 1rem;
+  }
+  .gap-xlarge {
+    gap: 2rem;
+  }
+  .p-base {
+    padding: 0.5rem;
+  }
+  .p-large {
+    padding: 1rem;
+  }
+  .px-xlarge {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .py-base {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .my-small {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .mt-base {
+    margin-top: 0.5rem;
+  }
+  .mb-small {
+    margin-bottom: 0.25rem;
+  }
+  .mb-base {
+    margin-bottom: 0.5rem;
+  }
+  .mb-large {
+    margin-bottom: 1rem;
+  }
+  .mb-xlarge {
+    margin-bottom: 2rem;
+  }
+  .font-base {
+    font-size: 0.875rem;
+  }
+  .font-large {
+    font-size: 1rem;
+  }
+  .font-xlarge {
+    font-size: 1.25rem;
+  }
+  .font-2xlarge {
+    font-size: 1.5rem;
+  }
+  .font-3xlarge {
+    font-size: 2rem;
+  }
+  .font-4xlarge {
+    font-size: 2.5rem;
+  }
 }

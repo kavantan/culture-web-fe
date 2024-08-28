@@ -52,12 +52,12 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="flex-column align-center justify-center p-32">
+      <div className="flex-column align-center justify-center p-large">
         <input
           type="file"
           onChange={handleImageChange}
           accept="image/*"
-          className="mb32"
+          className="mb-large"
         />
         <Button
           className="uploadButton"
@@ -66,7 +66,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         >
           {uploading ? 'Uploading...' : 'Upload Image'}
         </Button>
-        {error && <div className="red mt16">{error}</div>}
+        {error && <div className="red mt-base">{error}</div>}
         {content && renderContent(content)}
       </div>
     </Modal>

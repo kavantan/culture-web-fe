@@ -11,18 +11,18 @@ function MainPage() {
   };
 
   return (
-    <div className="mb64">
-      <div className="font-64 white mb32">Home</div>
-      <div className="flex-between align-center gap-64">
+    <div className="mb-xlarge">
+      <div className="font-4xlarge white mb-large">Home</div>
+      <div className="flex-between align-center gap-xlarge">
         <div className="mx-auto">
-          <div className="font-64 white">
+          <div className="font-4xlarge white">
             Discover the World of Cultures at MusAIca
           </div>
-          <div className="font-32 gray my16">
+          <div className="font-2xlarge gray my-small">
             Experience the beauty and diversity of cultures from all around the
             globe.
           </div>
-          <div className="flex-center gap-32 my16">
+          <div className="flex-center gap-large my-small">
             <Button onClick={() => handleNavigate('/cultures')}>
               Get Started
             </Button>

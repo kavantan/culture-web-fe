@@ -25,8 +25,8 @@ const CultureCard: React.FC<CultureCardProps> = ({ name, url, imageUrl }) => {
       tabIndex={0}
     >
       <img src={imageUrl} alt={name} className="cardImage" />
-      <div className="p-16">
-        <div className="font-32 mb16">{name}</div>
+      <div className="p-base">
+        <div className="font-2xlarge mb-base">{name}</div>
         <Button onClick={navigateToCulture}>READ MORE →</Button>
       </div>
     </div>
