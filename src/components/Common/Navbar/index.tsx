@@ -1,17 +1,26 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './index.css';
 
 function Navbar() {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleNavigate = (path: string) => {
     navigate(path);
+    setIsOpen(false);
   };
 
   return (
     <nav className="navbar flex-between align-center px-64 py-16">
-      <div className="font-24 font-bold red">MusAIca</div>
-      <div className="font-20">
+      <button
+        type="button"
+        onClick={() => handleNavigate('/')}
+        className="font-24 text-only-button red font-bold"
+      >
+        MusAIca
+      </button>
+      <div className={`nav-links font-20 ${isOpen ? 'active' : ''}`}>
         <button
           type="button"
           onClick={() => handleNavigate('/')}
@@ -47,6 +56,9 @@ function Navbar() {
         >
           Contact Us
         </button>
+      </div>
+      <div className="menu" onClick={() => setIsOpen(!isOpen)}>
+        <span>Menu</span>
       </div>
     </nav>
   );
