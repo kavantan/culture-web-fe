@@ -1,13 +1,33 @@
+.media-responsive {
+  height: auto;
+  max-height: 50vh;
+  max-width: 100%;
+}
 .flex {
   display: flex;
 }
 .flex-between {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 .flex-center {
   display: flex;
   justify-content: center;
+}
+.flex-center-responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-center-responsive {
+    flex-direction: column;
+  }
 }
 .flex-column {
   flex-direction: column;
@@ -145,8 +165,8 @@
   background: none;
   border: none;
 }
-.overflow-y-auto {
-  overflow-y: auto;
+.overflow-auto {
+  overflow: auto;
 }
 
 @media screen and (max-width: 768px) {

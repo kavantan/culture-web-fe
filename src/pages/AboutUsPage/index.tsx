@@ -5,9 +5,9 @@ function AboutUsPage() {
   return (
     <div className="mb-xlarge">
       <div className="font-4xlarge white mb-large">About Us</div>
-      <div className="flex-center gap-large">
+      <div className="flex-center-responsive gap-large">
         <div>
-          <video controls className="video">
+          <video controls className="media-responsive">
             <source src={kathakaliVideo} type="video/mp4" />
             <track kind="captions" src="captions.vtt" label="English" />
             Your browser does not support the video tag.
@@ -18,7 +18,7 @@ function AboutUsPage() {
             Learn More about Different Cultures
           </div>
           <div className="font-xlarge text-left gray mb-base">
-            MusAIca has many resources that teach you more about different
+            KathakalAI has many resources that teach you more about different
             cultures.
           </div>
           <div className="flex-column">

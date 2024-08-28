@@ -23,7 +23,7 @@ function KathakaliPage() {
   return (
     <div className="mb-xlarge">
       <div className="font-4xlarge white mb-large">Kathakali</div>
-      <img className="topImage" src={kathakaliImage} alt="Kathakali" />
+      <img className="media-responsive" src={kathakaliImage} alt="Kathakali" />
       <nav className="flex-center font-large gap-base text-only-button">
         <button
           className="white-underline p-base text-only-button"

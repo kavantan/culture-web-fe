@@ -18,7 +18,7 @@ function Navbar() {
         onClick={() => handleNavigate('/')}
         className="font-xlarge text-only-button red font-bold"
       >
-        MusAIca
+        KathakalAI
       </button>
       <div className={`nav-links font-large ${isOpen ? 'active' : ''}`}>
         <button
@@ -57,7 +57,18 @@ function Navbar() {
           Contact Us
         </button>
       </div>
-      <div className="menu" onClick={() => setIsOpen(!isOpen)}>
+      <div
+        className="menu"
+        onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === 'Space') {
+            setIsOpen(!isOpen);
+            e.preventDefault();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
         <span className="font-xlarge">Menu</span>
       </div>
     </nav>

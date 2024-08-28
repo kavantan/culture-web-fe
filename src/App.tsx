@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="appContainer">
         <Navbar />
-        <div className="px-xlarge overflow-y-auto">
+        <div className="px-xlarge overflow-auto">
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />

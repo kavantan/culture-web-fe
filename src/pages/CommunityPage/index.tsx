@@ -8,7 +8,7 @@ function CommunityPage() {
       <div className="font-4xlarge white mb-large">Community</div>
       <div className="mb-large">
         <div className="font-2xlarge white mb-base">Hi there!</div>
-        <div className="flex justify-center gap-large">
+        <div className="flex-center-responsive gap-large">
           {watchContent.map((content) => (
             <CommunityCard
               key={content.title}
@@ -21,7 +21,7 @@ function CommunityPage() {
       </div>
       <div>
         <div className="font-2xlarge white mb-base">Resources</div>
-        <div className="flex justify-center gap-large">
+        <div className="flex-center-responsive gap-large">
           {readContent.map((content) => (
             <CommunityCard
               key={content.title}

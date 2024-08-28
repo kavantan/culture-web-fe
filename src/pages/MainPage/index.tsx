@@ -16,7 +16,7 @@ function MainPage() {
       <div className="flex-between align-center gap-xlarge">
         <div className="mx-auto">
           <div className="font-4xlarge white">
-            Discover the World of Cultures at MusAIca
+            Discover the World of Cultures at KathakalAI
           </div>
           <div className="font-2xlarge gray my-small">
             Experience the beauty and diversity of cultures from all around the
@@ -31,7 +31,7 @@ function MainPage() {
             </Button>
           </div>
         </div>
-        <img src={heroImage} alt="Cultural" />
+        <img className="media-responsive" src={heroImage} alt="Cultural" />
       </div>
     </div>
   );
