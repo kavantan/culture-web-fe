@@ -1,7 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import Button from 'components/Common/Button';
 import './index.css';
-import { BEGANTOFLY4_GMAIL_EMAIL_API_KEY } from 'configs/env.config';
+import { EMAIL_API_KEY } from 'configs/env.config';
 
 const ContactUsPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +18,7 @@ const ContactUsPage: React.FC = () => {
     if (response.ok) {
       setSubmitted(true);
     } else {
-      console.error('Form submission error:', response.statusText);
+      // TODO: Handle the error
     }
   };
 
@@ -27,7 +27,7 @@ const ContactUsPage: React.FC = () => {
       <h1>Contact Us</h1>
       <p>Any questions? Drop us a message!</p>
       <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST" className="contactForm">
-      <input type="hidden" name="access_key" value={BEGANTOFLY4_GMAIL_EMAIL_API_KEY} />
+      <input type="hidden" name="access_key" value={EMAIL_API_KEY} />
         <div className="formRow">
           <input type="text" name="firstName" placeholder="First Name" required />
           <input type="text" name="lastName" placeholder="Last Name" required />

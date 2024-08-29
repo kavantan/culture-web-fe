@@ -6,6 +6,6 @@ if (!backendUri) {
 
 const BACKEND_URI = backendUri;
 
-export const BEGANTOFLY4_GMAIL_EMAIL_API_KEY = process.env.BEGANTOFLY4_GMAIL_EMAIL_API_KEY;
+export const EMAIL_API_KEY = process.env.BEGANTOFLY4_GMAIL_EMAIL_API_KEY;
 
 export default BACKEND_URI;
