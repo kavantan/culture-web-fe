@@ -4,9 +4,9 @@ import './index.css';
 
 function CulturesPage() {
   return (
-    <div className="mb64">
-      <div className="font-64 white mb32">Cultures</div>
-      <div className="flex-between">
+    <div className="mb-xlarge">
+      <div className="font-4xlarge white mb-large">Cultures</div>
+      <div className="flex-center-responsive gap-xlarge">
         {cultureData.map((culture) => (
           <CultureCard
             key={culture.name}

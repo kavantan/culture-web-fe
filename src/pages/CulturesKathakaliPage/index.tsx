@@ -21,50 +21,50 @@ function KathakaliPage() {
   };
 
   return (
-    <div className="mb64">
-      <div className="font-64 white mb32">Kathakali</div>
-      <img className="topImage" src={kathakaliImage} alt="Kathakali" />
-      <nav className="flex-center font-20 gap-16 text-only-button">
+    <div className="mb-xlarge">
+      <div className="font-4xlarge white mb-large">Kathakali</div>
+      <img className="media-responsive" src={kathakaliImage} alt="Kathakali" />
+      <nav className="flex-center font-large gap-base text-only-button">
         <button
-          className="white-underline p-16 text-only-button"
+          className="white-underline p-base text-only-button"
           type="button"
           onClick={(e) => handleNavigation(e, 'overview')}
         >
           Overview
         </button>
         <button
-          className="white-underline p-16 text-only-button"
+          className="white-underline p-base text-only-button"
           type="button"
           onClick={(e) => handleNavigation(e, 'algorithm1')}
         >
           Character Recognition Algorithm
         </button>
         <button
-          className="white-underline p-16 text-only-button"
+          className="white-underline p-base text-only-button"
           type="button"
           onClick={(e) => handleNavigation(e, 'algorithm2')}
         >
           Expression Recognition Algorithm
         </button>
         <button
-          className="white-underline p-16 text-only-button"
+          className="white-underline p-base text-only-button"
           type="button"
           onClick={(e) => handleNavigation(e, 'connect')}
         >
           Connect
         </button>
       </nav>
-      <section id="overview" className="mb32">
-        <div className="font-64 white mb16">Overview</div>
-        <div className="font-32 gray">
+      <section id="overview" className="mb-large">
+        <div className="font-4xlarge white mb-base">Overview</div>
+        <div className="font-2xlarge gray">
           text text text text text text text text text text text text text text
         </div>
       </section>
-      <section id="algorithm1" className="mb32">
-        <div className="font-64 white mb16">
+      <section id="algorithm1" className="mb-large">
+        <div className="font-4xlarge white mb-base">
           Character Recognition Algorithm
         </div>
-        <div className="font-32 gray mb16">
+        <div className="font-2xlarge gray mb-base">
           This is an AI algorithm that helps users understand the major types of
           Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
           Chuvanna-Thadi, Vella-Thadi and Kari-Male.
@@ -80,28 +80,28 @@ function KathakaliPage() {
             )}
           />
         )}
-        <div className="font-32 gray my16">
+        <div className="font-2xlarge gray my-small">
           The algorithm uses image recognition to identify the characters and
           display the name of the character. Simply upload an image of a
           Kathakali character to see the result.
         </div>
       </section>
 
-      <section id="algorithm2" className="mb32">
-        <div className="font-64 white mb16">
+      <section id="algorithm2" className="mb-large">
+        <div className="font-4xlarge white mb-base">
           Expression Recognition Algorithm
         </div>
-        <div className="font-32 gray mb16">
+        <div className="font-2xlarge gray mb-base">
           text text text text text text text text text text text text text text
         </div>
         <Button>Upload Image</Button>
-        <div className="font-32 gray my16">
+        <div className="font-2xlarge gray my-small">
           text text text text text text text text text text text text text text
         </div>
       </section>
       <section id="connect">
-        <div className="font-64 white mb16">Connect</div>
-        <div className="font-32 gray">
+        <div className="font-4xlarge white mb-base">Connect</div>
+        <div className="font-2xlarge gray">
           text text text text text text text text text text text text text text
         </div>
       </section>

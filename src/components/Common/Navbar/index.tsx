@@ -1,17 +1,26 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './index.css';
 
 function Navbar() {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleNavigate = (path: string) => {
     navigate(path);
+    setIsOpen(false);
   };
 
   return (
-    <nav className="navbar flex-between align-center px-64 py-16">
-      <div className="font-24 font-bold red">CultureWeb</div>
-      <div className="font-20">
+    <nav className="navbar flex-between align-center px-xlarge py-base">
+      <button
+        type="button"
+        onClick={() => handleNavigate('/')}
+        className="font-xlarge text-only-button red font-bold"
+      >
+        KathakalAI
+      </button>
+      <div className={`nav-links font-large ${isOpen ? 'active' : ''}`}>
         <button
           type="button"
           onClick={() => handleNavigate('/')}
@@ -47,6 +56,20 @@ function Navbar() {
         >
           Contact Us
         </button>
+      </div>
+      <div
+        className="menu"
+        onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === 'Space') {
+            setIsOpen(!isOpen);
+            e.preventDefault();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
+        <span className="font-xlarge">Menu</span>
       </div>
     </nav>
   );

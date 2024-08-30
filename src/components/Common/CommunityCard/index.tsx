@@ -20,8 +20,8 @@ const CommunityCard: React.FC<CommunityCardProps> = ({
   return (
     <div className="card flex-column justify-center align-center">
       <div className="text-center">
-        <div className="font-32 mb16">{title}</div>
-        <div className="font-16 gray mb16">{description}</div>
+        <div className="font-2xlarge mb-base">{title}</div>
+        <div className="font-base gray mb-base">{description}</div>
         <Button onClick={handleButtonClick}>{buttonText}</Button>
       </div>
     </div>
