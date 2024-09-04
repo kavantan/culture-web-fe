@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
+import { Modal } from 'antd';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
-import Modal from '../Modal';
 import './index.css';
 
 interface ImageUploadProps {
@@ -51,7 +51,22 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal
+      open={isOpen}
+      onCancel={onClose}
+      footer={[
+        <Button key="back" onClick={onClose}>
+          Close
+        </Button>,
+        <Button
+          className="uploadButton"
+          onClick={handleUploadImage}
+          disabled={uploading}
+        >
+          {uploading ? 'Uploading...' : 'Upload Image'}
+        </Button>,
+      ]}
+    >
       <div className="flex-column align-center justify-center p-large">
         <input
           type="file"
@@ -59,13 +74,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           accept="image/*"
           className="mb-large"
         />
-        <Button
-          className="uploadButton"
-          onClick={handleUploadImage}
-          disabled={uploading}
-        >
-          {uploading ? 'Uploading...' : 'Upload Image'}
-        </Button>
         {error && <div className="red mt-base">{error}</div>}
         {content && renderContent(content)}
       </div>
