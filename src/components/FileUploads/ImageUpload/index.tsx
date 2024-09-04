@@ -1,14 +1,14 @@
 import React, { useState, ChangeEvent } from 'react';
 import Button from 'components/Common/Button';
-import { Prediction } from 'types/interface';
+import { PredictionMultiple } from 'types/interface';
 import Modal from '../Modal';
 import './index.css';
 
 interface ImageUploadProps {
   isOpen: boolean;
   onClose: () => void;
-  renderContent: (prediction: Prediction) => JSX.Element;
-  uploadFunction: (file: File) => Promise<Prediction>;
+  renderContent: (prediction: PredictionMultiple) => JSX.Element;
+  uploadFunction: (file: File) => Promise<PredictionMultiple>;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -20,7 +20,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   const [image, setImage] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
-  const [content, setContent] = useState<Prediction | null>(null);
+  const [content, setContent] = useState<PredictionMultiple | null>(null);
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {

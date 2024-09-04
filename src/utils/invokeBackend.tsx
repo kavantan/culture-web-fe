@@ -1,7 +1,34 @@
 import BACKEND_URI from 'configs/env.config';
-import { Prediction } from 'types/interface';
+import { PredictionMultiple } from 'types/interface';
 
-const uploadImgToCharRecBE = async (imageFile: File): Promise<Prediction> => {
+const mockResponse: PredictionMultiple = {
+  prediction: [
+    {
+      prediction: 'White-beard',
+      location: {
+        x: 210,
+        y: 60,
+        width: 224,
+        height: 75,
+        probability: 0,
+      },
+    },
+    {
+      prediction: 'Kari-Male',
+      location: {
+        x: 44,
+        y: 42,
+        width: 61,
+        height: 62,
+        probability: 0,
+      },
+    },
+  ],
+};
+
+const uploadImgToCharRecBE = async (
+  imageFile: File,
+): Promise<PredictionMultiple> => {
   const formData = new FormData();
   formData.append('image', imageFile);
 
@@ -13,7 +40,8 @@ const uploadImgToCharRecBE = async (imageFile: File): Promise<Prediction> => {
   if (!response.ok) {
     throw new Error('Failed to upload image.');
   }
-  return response.json();
+  return mockResponse;
+  // return response.json();
 };
 
 export default uploadImgToCharRecBE;

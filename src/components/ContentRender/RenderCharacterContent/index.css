@@ -9,3 +9,13 @@
   object-fit: contain;
   margin: 1rem auto;
 }
+
+.characterSection {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.characterTable {
+  margin: auto;
+  width: 90%;
+}
