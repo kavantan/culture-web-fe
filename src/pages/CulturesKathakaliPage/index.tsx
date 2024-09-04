@@ -4,7 +4,6 @@ import ImageUpload from 'components/FileUploads/ImageUpload';
 import uploadImgToCharRecBE from 'utils/invokeBackend';
 import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
 import Button from 'components/Common/Button';
-import './index.css';
 
 function KathakaliPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);

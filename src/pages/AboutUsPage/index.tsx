@@ -1,5 +1,4 @@
 import kathakaliVideo from 'assets/videos/kathakali-video1.mp4';
-import './index.css';
 
 function AboutUsPage() {
   return (
