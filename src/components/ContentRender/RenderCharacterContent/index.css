@@ -1,21 +1,5 @@
-.output {
-  max-width: 800px;
-}
-
 .characterImage {
   display: block;
-  max-width: 100%;
   max-height: 50vh;
-  object-fit: contain;
   margin: 1rem auto;
-}
-
-.characterSection {
-  margin-bottom: 2rem;
-  width: 100%;
-}
-
-.characterTable {
-  margin: auto;
-  width: 90%;
 }

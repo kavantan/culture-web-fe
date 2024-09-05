@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Upload, message } from 'antd';
+import { Modal, Upload, Carousel } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
@@ -8,7 +8,7 @@ import './index.css';
 interface ImageUploadProps {
   isOpen: boolean;
   onClose: () => void;
-  renderContent: (prediction: PredictionMultiple) => JSX.Element;
+  renderContent: (prediction: PredictionMultiple, file: File) => JSX.Element;
   uploadFunction: (file: File) => Promise<PredictionMultiple>;
 }
 
@@ -73,7 +73,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         </Button>,
       ]}
     >
-      <div className="flex-column align-center justify-center p-large">
+      <div className="align-center justify-center p-large">
         <Upload
           className="gray"
           name="image"
@@ -89,7 +89,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </Button>
         </Upload>
         {error && <div className="red mt-base">{error}</div>}
-        {content && renderContent(content)}
+        {content && image && renderContent(content, image)}
         {!isUploaded && (
           <Button
             className="mt-base"
