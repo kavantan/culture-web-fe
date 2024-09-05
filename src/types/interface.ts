@@ -14,3 +14,11 @@ interface Prediction {
 export interface PredictionMultiple {
   prediction: Prediction[];
 }
+
+export interface Character {
+  name: string;
+  shortDescription: string;
+  examples: string;
+  url: string;
+  imagePath: string;
+}

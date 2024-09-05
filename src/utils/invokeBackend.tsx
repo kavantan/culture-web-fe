@@ -32,7 +32,7 @@ const uploadImgToCharRecBE = async (
   const formData = new FormData();
   formData.append('image', imageFile);
 
-  const response = await fetch(`${BACKEND_URI}`, {
+  const response = await fetch(`${BACKEND_URI}/classify`, {
     method: 'POST',
     body: formData,
   });
@@ -40,8 +40,28 @@ const uploadImgToCharRecBE = async (
   if (!response.ok) {
     throw new Error('Failed to upload image.');
   }
-  return mockResponse;
+
+  // TODO: Uncomment return statement and test function once backend is ready
   // return response.json();
+  return mockResponse;
 };
+
+// TODO: Uncomment and test function once backend is ready
+// const uploadImgToExpressionRecBE = async (
+//   imageFile: File,
+// ): Promise<PredictionMultiple> => {
+//   const formData = new FormData();
+//   formData.append('image', imageFile);
+
+//   const response = await fetch(`${BACKEND_URI}/expression`, {
+//     method: 'POST',
+//     body: formData,
+//   });
+
+//   if (!response.ok) {
+//     throw new Error('Failed to upload image.');
+//   }
+//   return response.json();
+// };
 
 export default uploadImgToCharRecBE;

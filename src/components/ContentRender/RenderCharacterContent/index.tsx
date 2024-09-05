@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel, Card } from 'antd';
 import charactersData from 'assets/data/characters.json';
-import toPascalCase from 'utils/toPascalCase';
 import Button from 'components/Common/Button';
-import { PredictionMultiple } from 'types/interface';
+import { PredictionMultiple, Character } from 'types/interface';
+import toPascalCase from 'utils/toPascalCase';
 import * as characterImages from './images';
 import './index.css';
-
-interface Character {
-  name: string;
-  shortDescription: string;
-  examples: string;
-  url: string;
-  imagePath: string;
-}
 
 const RenderCharacterContent: React.FC<{
   predictionMultiple: PredictionMultiple;
   file: File;
 }> = ({ predictionMultiple, file }) => {
+  const [imageUrl, setImageUrl] = useState('');
+
+  useEffect(() => {
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setImageUrl(url);
+      return () => URL.revokeObjectURL(url);
+    }
+    return undefined;
+  }, [file]);
+
   return (
     <Carousel arrows>
       {predictionMultiple.prediction.map((prediction) => {
@@ -48,14 +51,23 @@ const RenderCharacterContent: React.FC<{
               </div>
             </div>
             <div>
-              <img
-                src={characterImage}
-                alt={characterInfo.name}
+              <div
+                style={{
+                  width: `${prediction.location.width}px`,
+                  height: `${prediction.location.height}px`,
+                  backgroundImage: `url(${imageUrl})`,
+                  backgroundPosition: `-${prediction.location.x}px -${prediction.location.y}px`,
+                }}
                 className="characterImage"
               />
               <div className="font-base gray mb-base">
                 {characterInfo.shortDescription}
               </div>
+              <img
+                src={characterImage}
+                alt={characterInfo.name}
+                className="characterImage"
+              />
               <div className="flex-center font-base gray gap-base">
                 <div className="font-bold white">Examples:</div>
                 <div>{characterInfo.examples}</div>

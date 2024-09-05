@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Upload, Carousel } from 'antd';
+import { Modal, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
@@ -81,7 +81,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           beforeUpload={beforeUpload}
           onRemove={onRemove}
           multiple={false}
-          showUploadList={true}
+          showUploadList
           accept="image/*"
         >
           <Button>
