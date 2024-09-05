@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'antd';
+import { Carousel, Card } from 'antd';
 import charactersData from 'assets/data/characters.json';
 import toPascalCase from 'utils/toPascalCase';
 import Button from 'components/Common/Button';
@@ -18,60 +18,60 @@ interface Character {
 const RenderCharacterContent: React.FC<{
   predictionMultiple: PredictionMultiple;
   file: File;
-}> = ({ predictionMultiple, file }) => (
-  <Carousel arrows>
-    {predictionMultiple.prediction.map((prediction) => {
-      const characterInfo = charactersData.find(
-        (char: Character) =>
-          char.name.toLowerCase() === prediction.prediction.toLowerCase(),
-      );
-      if (!characterInfo) return null;
+}> = ({ predictionMultiple, file }) => {
+  return (
+    <Carousel arrows>
+      {predictionMultiple.prediction.map((prediction) => {
+        const characterInfo = charactersData.find(
+          (char: Character) =>
+            char.name.toLowerCase() === prediction.prediction.toLowerCase(),
+        );
+        if (!characterInfo) return null;
 
-      const characterImage =
-        characterImages[
-          toPascalCase(
-            characterInfo?.name || '',
-          ) as keyof typeof characterImages
-        ];
+        const characterImage =
+          characterImages[
+            toPascalCase(characterInfo.name) as keyof typeof characterImages
+          ];
 
-      return (
-        <div key={characterInfo.name}>
-          <img
-            src={URL.createObjectURL(file)}
-            alt={characterInfo.name}
-            style={{ maxHeight: '200px' }}
-          />
-          <img
-            src={characterImage}
-            alt={characterInfo.name}
-            className="characterImage"
-          />
-          <table className="mb-base">
-            <tbody>
-              <tr>
-                <th>Name:</th>
-                <td>{characterInfo.name}</td>
-              </tr>
-              <tr>
-                <th>Description:</th>
-                <td>{characterInfo.shortDescription}</td>
-              </tr>
-              <tr>
-                <th>Examples:</th>
-                <td>{characterInfo.examples}</td>
-              </tr>
-            </tbody>
-          </table>
-          <Button
-            className="text-center"
-            onClick={() => window.open(characterInfo.url, '_blank')}
+        return (
+          <Card
+            key={characterInfo.name}
+            className="mt-base"
+            bordered={false}
+            styles={{
+              body: { backgroundColor: '#1c1e24' },
+            }}
           >
-            Find Out More
-          </Button>
-        </div>
-      );
-    })}
-  </Carousel>
-);
+            <div>
+              <div className="font-xlarge white mb-base">
+                {characterInfo.name}
+              </div>
+            </div>
+            <div>
+              <img
+                src={characterImage}
+                alt={characterInfo.name}
+                className="characterImage"
+              />
+              <div className="font-base gray mb-base">
+                {characterInfo.shortDescription}
+              </div>
+              <div className="flex-center font-base gray gap-base">
+                <div className="font-bold white">Examples:</div>
+                <div>{characterInfo.examples}</div>
+              </div>
+              <Button
+                className="text-center mt-base mb-base"
+                onClick={() => window.open(characterInfo.url, '_blank')}
+              >
+                Find Out More
+              </Button>
+            </div>
+          </Card>
+        );
+      })}
+    </Carousel>
+  );
+};
 
 export default RenderCharacterContent;

@@ -8,7 +8,7 @@ interface Location {
 
 interface Prediction {
   prediction: string;
-  location?: Location;
+  location: Location;
 }
 
 export interface PredictionMultiple {
