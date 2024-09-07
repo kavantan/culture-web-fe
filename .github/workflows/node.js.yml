@@ -48,7 +48,7 @@ jobs:
             ${{ runner.os }}-node_modules-
       # Step 4: Install dependencies
       - name: Install dependencies
-        run: npm --prefix ./e2e install
+        run: npm install
 
       # Step 5: Install Playwright browsers
       - name: Install Playwright browsers
@@ -61,7 +61,7 @@ jobs:
           npx wait-on http://localhost:5173/ # Wait until the server is available
       # Step 6: Run Playwright tests
       - name: Run Playwright tests
-        run: npm  --prefix ./e2e run test:e2e
+        run: npm run test:e2e
         # If your tests need a server to be running, you can use `npm start &` to run it in the background
 
       # Step 7: Upload Playwright report (optional)
