@@ -84,7 +84,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           showUploadList
           accept="image/*"
         >
-          <Button>
+          <Button disabled={!!image}>
             <UploadOutlined /> <span>Select Image</span>
           </Button>
         </Upload>
