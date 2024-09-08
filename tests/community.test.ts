@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { baseUrl } from '../playwright.config';
 
 
 test('Community Page has KathakalAI Button in title and various contents', async ({ page }) => {
