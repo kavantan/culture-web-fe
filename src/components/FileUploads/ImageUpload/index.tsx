@@ -1,14 +1,15 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
+import { Modal, Upload } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
-import { Prediction } from 'types/interface';
-import Modal from '../Modal';
+import { PredictionMultiple } from 'types/interface';
 import './index.css';
 
 interface ImageUploadProps {
   isOpen: boolean;
   onClose: () => void;
-  renderContent: (prediction: Prediction) => JSX.Element;
-  uploadFunction: (file: File) => Promise<Prediction>;
+  renderContent: (prediction: PredictionMultiple, file: File) => JSX.Element;
+  uploadFunction: (file: File) => Promise<PredictionMultiple>;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -19,14 +20,21 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 }) => {
   const [image, setImage] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [isUploaded, setIsUploaded] = useState(false);
   const [error, setError] = useState('');
-  const [content, setContent] = useState<Prediction | null>(null);
+  const [content, setContent] = useState<PredictionMultiple | null>(null);
 
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setImage(e.target.files[0]);
-      setContent(null);
-    }
+  const beforeUpload = (file: File): boolean => {
+    setImage(file);
+    setIsUploaded(false);
+    // setContent(null);
+    return false;
+  };
+
+  const onRemove = () => {
+    setImage(null);
+    setIsUploaded(false);
+    setContent(null);
   };
 
   const handleUploadImage = async () => {
@@ -40,6 +48,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     try {
       const prediction = await uploadFunction(image);
       setContent(prediction);
+      setIsUploaded(true);
     } catch (err: unknown) {
       if (err instanceof Error) {
         // TODO: Show error message
@@ -51,23 +60,45 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <div className="flex-column align-center justify-center p-large">
-        <input
-          type="file"
-          onChange={handleImageChange}
+    <Modal
+      className="text-center"
+      styles={{
+        content: { backgroundColor: '#2b2d38' },
+      }}
+      open={isOpen}
+      onCancel={onClose}
+      footer={[
+        <Button key="back" onClick={onClose}>
+          Close
+        </Button>,
+      ]}
+    >
+      <div className="align-center justify-center p-large">
+        <Upload
+          className="gray"
+          name="image"
+          listType="picture"
+          beforeUpload={beforeUpload}
+          onRemove={onRemove}
+          multiple={false}
+          showUploadList
           accept="image/*"
-          className="mb-large"
-        />
-        <Button
-          className="uploadButton"
-          onClick={handleUploadImage}
-          disabled={uploading}
         >
-          {uploading ? 'Uploading...' : 'Upload Image'}
-        </Button>
+          <Button disabled={!!image}>
+            <UploadOutlined /> <span>Select Image</span>
+          </Button>
+        </Upload>
         {error && <div className="red mt-base">{error}</div>}
-        {content && renderContent(content)}
+        {content && image && renderContent(content, image)}
+        {!isUploaded && (
+          <Button
+            className="mt-base"
+            onClick={handleUploadImage}
+            disabled={uploading || !image}
+          >
+            {uploading ? 'Uploading...' : 'Upload Image'}
+          </Button>
+        )}
       </div>
     </Modal>
   );

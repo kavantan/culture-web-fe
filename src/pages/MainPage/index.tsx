@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import heroImage from 'assets/images/kathakali-stock-images/kathakali1.jpg';
 import Button from 'components/Common/Button';
-import './index.css';
 
 function MainPage() {
   const navigate = useNavigate();

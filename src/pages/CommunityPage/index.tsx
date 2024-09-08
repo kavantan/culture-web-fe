@@ -1,6 +1,5 @@
 import CommunityCard from 'components/Common/CommunityCard';
 import { watchContent, readContent } from './content';
-import './index.css';
 
 function CommunityPage() {
   return (
