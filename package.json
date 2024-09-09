@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint --max-warnings 0 --ext .ts,.tsx ./ --fix",
     "preview": "vite preview",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed"
   },
   "dependencies": {
     "@ant-design/icons": "^5.4.0",
@@ -17,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "@playwright/test": "^1.47.0"
   },
   "devDependencies": {
     "@types/node": "^22.5.0",
