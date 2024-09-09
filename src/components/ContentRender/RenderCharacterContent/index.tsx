@@ -1,61 +1,88 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Carousel, Card } from 'antd';
 import charactersData from 'assets/data/characters.json';
-import toPascalCase from 'utils/toPascalCase';
 import Button from 'components/Common/Button';
-import { Prediction } from 'types/interface';
+import { PredictionMultiple, Character } from 'types/interface';
+import toPascalCase from 'utils/toPascalCase';
 import * as characterImages from './images';
 import './index.css';
 
-interface Character {
-  name: string;
-  shortDescription: string;
-  examples: string;
-  url: string;
-  imagePath: string;
-}
+const RenderCharacterContent: React.FC<{
+  predictionMultiple: PredictionMultiple;
+  file: File;
+}> = ({ predictionMultiple, file }) => {
+  const [imageUrl, setImageUrl] = useState('');
 
-const RenderCharacterContent: React.FC<{ prediction: Prediction }> = ({
-  prediction,
-}) => {
-  const characterInfo = charactersData.find(
-    (char: Character) =>
-      char.name.toLowerCase() === prediction?.prediction.toLowerCase(),
-  );
-
-  const characterImage =
-    characterImages[
-      toPascalCase(characterInfo?.name || '') as keyof typeof characterImages
-    ];
+  useEffect(() => {
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setImageUrl(url);
+      return () => URL.revokeObjectURL(url);
+    }
+    return undefined;
+  }, [file]);
 
   return (
-    characterInfo && (
-      <div className="output flex-column align-center text-center mx-auto mt-base">
-        <img
-          src={characterImage}
-          alt={characterInfo.name}
-          className="characterImage"
-        />
-        <table className="mb-base">
-          <tbody>
-            <tr>
-              <th>Name:</th>
-              <td>{characterInfo.name}</td>
-            </tr>
-            <tr>
-              <th>Description:</th>
-              <td>{characterInfo.shortDescription}</td>
-            </tr>
-            <tr>
-              <th>Examples:</th>
-              <td>{characterInfo.examples}</td>
-            </tr>
-          </tbody>
-        </table>
-        <Button onClick={() => window.open(characterInfo.url, '_blank')}>
-          Find Out More
-        </Button>
-      </div>
-    )
+    <Carousel arrows>
+      {predictionMultiple.prediction.map((prediction) => {
+        const characterInfo = charactersData.find(
+          (char: Character) =>
+            char.name.toLowerCase() === prediction.prediction.toLowerCase(),
+        );
+        if (!characterInfo) return null;
+
+        const characterImage =
+          characterImages[
+            toPascalCase(characterInfo.name) as keyof typeof characterImages
+          ];
+
+        return (
+          <Card
+            key={characterInfo.name}
+            className="mt-base"
+            bordered={false}
+            styles={{
+              body: { backgroundColor: '#1c1e24' },
+            }}
+          >
+            <div>
+              <div className="font-xlarge white mb-base">
+                {characterInfo.name}
+              </div>
+            </div>
+            <div>
+              <div
+                style={{
+                  width: `${prediction.location.width}px`,
+                  height: `${prediction.location.height}px`,
+                  backgroundImage: `url(${imageUrl})`,
+                  backgroundPosition: `-${prediction.location.x}px -${prediction.location.y}px`,
+                }}
+                className="characterImage"
+              />
+              <div className="font-base gray mb-base">
+                {characterInfo.shortDescription}
+              </div>
+              <img
+                src={characterImage}
+                alt={characterInfo.name}
+                className="characterImage"
+              />
+              <div className="flex-center font-base gray gap-base">
+                <div className="font-bold white">Examples:</div>
+                <div>{characterInfo.examples}</div>
+              </div>
+              <Button
+                className="text-center mt-base mb-base"
+                onClick={() => window.open(characterInfo.url, '_blank')}
+              >
+                Find Out More
+              </Button>
+            </div>
+          </Card>
+        );
+      })}
+    </Carousel>
   );
 };
 

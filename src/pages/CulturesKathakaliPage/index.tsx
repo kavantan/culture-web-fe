@@ -4,7 +4,6 @@ import ImageUpload from 'components/FileUploads/ImageUpload';
 import uploadImgToCharRecBE from 'utils/invokeBackend';
 import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
 import Button from 'components/Common/Button';
-import './index.css';
 
 function KathakaliPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,8 +74,11 @@ function KathakaliPage() {
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             uploadFunction={uploadImgToCharRecBE}
-            renderContent={(prediction) => (
-              <RenderCharacterContent prediction={prediction} />
+            renderContent={(prediction, file) => (
+              <RenderCharacterContent
+                predictionMultiple={prediction}
+                file={file}
+              />
             )}
           />
         )}
