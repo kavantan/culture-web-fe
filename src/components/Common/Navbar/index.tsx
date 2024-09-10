@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { MenuOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import './index.css';
 
@@ -57,20 +58,7 @@ function Navbar() {
           Contact Us
         </button>
       </div>
-      <div
-        className="menu"
-        onClick={() => setIsOpen(!isOpen)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === 'Space') {
-            setIsOpen(!isOpen);
-            e.preventDefault();
-          }
-        }}
-        role="button"
-        tabIndex={0}
-      >
-        <span className="font-xlarge">Menu</span>
-      </div>
+      <MenuOutlined className="menu gray" onClick={() => setIsOpen(!isOpen)} />
     </nav>
   );
 }
