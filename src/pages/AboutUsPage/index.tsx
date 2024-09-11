@@ -5,8 +5,8 @@ function AboutUsPage() {
     <div className="mb-xlarge">
       <div className="font-4xlarge white mb-large">About Us</div>
       <div className="flex-center-responsive gap-large">
-        <div>
-          <video controls className="media-responsive">
+        <div className="media-responsive-base">
+          <video controls>
             <source src={kathakaliVideo} type="video/mp4" />
             <track kind="captions" src="captions.vtt" label="English" />
             Your browser does not support the video tag.
@@ -28,18 +28,21 @@ function AboutUsPage() {
               Kathakali
             </a>
             <div className="font-xlarge gray mb-base text-left">
-              Kathakali is a... sample text sample text sample text sample text
-              sample text sample text.
+              Kathakali is a classical dance-drama from Kerala, India, known for
+              its vibrant costumes, intricate makeup, and elaborate facial
+              expressions. It combines dance, music, and acting to tell stories
+              from Indian epics like the Mahabharata and Ramayana.
             </div>
             <a
-              href="/cultures/culture2"
+              href="/cultures/kootiyattam"
               className="font-2xlarge red-underline mb-small"
             >
-              Culture 2
+              Kootiyattam
             </a>
             <div className="font-xlarge gray text-left">
-              Culture 2 is a... sample text sample text sample text sample text
-              sample text sample text.
+              Koodiyattam is an ancient Sanskrit theater tradition from Kerala,
+              considered one of the oldest living forms of theater. It blends
+              dance, drama, and ritualistic elements.
             </div>
           </div>
         </div>
