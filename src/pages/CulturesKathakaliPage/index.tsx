@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali1.jpg';
 import ImageUpload from 'components/FileUploads/ImageUpload';
-import uploadImgToCharRecBE from 'utils/invokeBackend';
+import { uploadImgToCharRecBE, uploadImgToExpressionRecBE} from 'utils/invokeBackend';
 import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
+import RenderExpressionContent from 'components/ContentRender/RenderExpressionContent';
 import Button from 'components/Common/Button';
 
 function KathakaliPage() {
@@ -96,7 +97,20 @@ function KathakaliPage() {
         <div className="font-2xlarge gray mb-base">
           text text text text text text text text text text text text text text
         </div>
-        <Button>Upload Image</Button>
+        <Button onClick={() => setIsModalOpen(true)}>Upload Image</Button>
+        {isModalOpen && (
+          <ImageUpload
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            uploadFunction={uploadImgToExpressionRecBE}
+            renderContent={(prediction, file) => (
+              <RenderExpressionContent
+                predictionMultiple={prediction}
+                file={file}
+              />
+            )}
+          />
+        )}
         <div className="font-2xlarge gray my-small">
           text text text text text text text text text text text text text text
         </div>
