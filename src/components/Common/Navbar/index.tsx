@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MenuOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import logoKathakalAI from 'assets/images/logos/kathakalai-pink.png';
 import './index.css';
 
 function Navbar() {
@@ -13,12 +14,13 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar flex-between align-center px-xlarge py-base">
+    <nav className="navbar flex-between align-center px-xlarge">
       <button
         type="button"
         onClick={() => handleNavigate('/')}
-        className="font-xlarge text-only-button red font-bold"
+        className="font-xlarge text-only-button red font-bold flex align-center"
       >
+        <img src={logoKathakalAI} alt="KathakalAI Logo" className="logo-img" />
         KathakalAI
       </button>
       <div className={`nav-links font-large ${isOpen ? 'active' : ''}`}>
