@@ -34,14 +34,12 @@ export const uploadImgToExpressionRecBE = async (
   const response = await fetch(`${BACKEND_URI}/classify-expression`, {
     method: 'POST',
     body: formData,
-  }).then((response) => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
+  }).then((output) => output.json())
+    .catch(() => {
       throw new Error('Failed to upload image.');
   });
 
-  const toReturn: Prediction[] = response.map((value: { prediction: any; location: any[]; accuracy: any[]; }) => {
-    return {
+  const toReturn: Prediction[] = response.map((value: { prediction: string; location: Location[]; accuracy: number[]; }) => ({
       prediction: value.prediction,
       location: {
         x: value.location[0],
@@ -50,8 +48,7 @@ export const uploadImgToExpressionRecBE = async (
         height: value.location[3],
         probability: value.accuracy
       }
-    }
-  })
+    }))
   return {prediction: toReturn};
 };
 

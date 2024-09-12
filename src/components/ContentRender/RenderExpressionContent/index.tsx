@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel, Card } from 'antd';
-import { expressionToContent } from './expressions';
-import Button from 'components/Common/Button';
-import { PredictionMultiple, Character } from 'types/interface';
-import toPascalCase from 'utils/toPascalCase';
+import { PredictionMultiple } from 'types/interface';
+import expressionToContent from './expressions';
 import './index.css';
 
 const RenderExpressionContent: React.FC<{

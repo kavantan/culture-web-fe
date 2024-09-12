@@ -1,5 +1,5 @@
 
-export const expressionToContent = {
+const expressionToContent = {
     'Anger': {
         'Name': 'Raudra',
         'Description': 'This rasa embodies fury, rage, and aggression. It is characterized by a fierce expression, furrowed brows, and forceful movements.'
@@ -37,3 +37,5 @@ export const expressionToContent = {
         'Description': 'This rasa conveys humor, comedy, and laughter. It is characterized by a smiling expression, twinkling eyes, and playful movements.'
     },
 }
+
+export default expressionToContent;
