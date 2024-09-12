@@ -58,7 +58,7 @@ const RenderCharacterContent: React.FC<{
                   backgroundImage: `url(${imageUrl})`,
                   backgroundPosition: `-${prediction.location.x}px -${prediction.location.y}px`,
                 }}
-                className="characterImage"
+                className="cropImage"
               />
               <div className="font-base gray mb-base">
                 {characterInfo.shortDescription}
