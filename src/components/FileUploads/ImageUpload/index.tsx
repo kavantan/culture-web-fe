@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Upload } from 'antd';
+import ImgCrop from 'antd-img-crop';
 import { UploadOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
@@ -27,7 +28,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   const beforeUpload = (file: File): boolean => {
     setImage(file);
     setIsUploaded(false);
-    // setContent(null);
     return false;
   };
 
@@ -74,20 +74,21 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       ]}
     >
       <div className="align-center justify-center p-large">
-        <Upload
-          className="gray"
-          name="image"
-          listType="picture"
-          beforeUpload={beforeUpload}
-          onRemove={onRemove}
-          multiple={false}
-          showUploadList
-          accept="image/*"
-        >
-          <Button disabled={!!image}>
-            <UploadOutlined /> <span>Select Image</span>
-          </Button>
-        </Upload>
+        <ImgCrop rotationSlider>
+          <Upload
+            className="gray"
+            listType="text"
+            beforeUpload={beforeUpload}
+            onRemove={onRemove}
+            multiple={false}
+            maxCount={1}
+            accept="image/*"
+          >
+            <Button disabled={!!image}>
+              <UploadOutlined /> <span>Select Image</span>
+            </Button>
+          </Upload>
+        </ImgCrop>
         {error && <div className="red mt-base">{error}</div>}
         {content && image && renderContent(content, image)}
         {!isUploaded && (
