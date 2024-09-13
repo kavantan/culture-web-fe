@@ -1,5 +1,5 @@
 import BACKEND_URI from 'configs/env.config';
-import { PredictionMultiple } from 'types/interface';
+import { PredictionMultiple, Prediction, Location } from 'types/interface';
 
 const mockResponse: PredictionMultiple = {
   prediction: [
@@ -26,7 +26,33 @@ const mockResponse: PredictionMultiple = {
   ],
 };
 
-const uploadImgToCharRecBE = async (
+export const uploadImgToExpressionRecBE = async (
+  imageFile: File,
+): Promise<PredictionMultiple> => {
+  const formData = new FormData();
+  formData.append('image', imageFile);
+  const response = await fetch(`${BACKEND_URI}/classify-expression`, {
+    method: 'POST',
+    body: formData,
+  }).then((output) => output.json())
+    .catch(() => {
+      throw new Error('Failed to upload image.');
+  });
+
+  const toReturn: Prediction[] = response.map((value: { prediction: string; location: Location[]; accuracy: number[]; }) => ({
+      prediction: value.prediction,
+      location: {
+        x: value.location[0],
+        y: value.location[2],
+        width: value.location[1],
+        height: value.location[3],
+        probability: value.accuracy
+      }
+    }))
+  return {prediction: toReturn};
+};
+
+export const uploadImgToCharRecBE = async (
   imageFile: File,
 ): Promise<PredictionMultiple> => {
   const formData = new FormData();
@@ -63,5 +89,3 @@ const uploadImgToCharRecBE = async (
 //   }
 //   return response.json();
 // };
-
-export default uploadImgToCharRecBE;

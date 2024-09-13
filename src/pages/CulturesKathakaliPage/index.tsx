@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali6.jpg';
 import ImageUpload from 'components/FileUploads/ImageUpload';
-import uploadImgToCharRecBE from 'utils/invokeBackend';
+import { uploadImgToCharRecBE, uploadImgToExpressionRecBE} from 'utils/invokeBackend';
 import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
+import RenderExpressionContent from 'components/ContentRender/RenderExpressionContent';
 import Button from 'components/Common/Button';
 
 function KathakaliPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCharacterModalOpen, setIsCharacterModalOpen] = useState(false);
+  const [isExpressionModalOpen, setIsExpressionModalOpen] = useState(false);
 
   const handleNavigation = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -80,11 +82,11 @@ function KathakaliPage() {
           Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
           Chuvanna-Thadi, Vella-Thadi and Kari-Male.
         </div>
-        <Button onClick={() => setIsModalOpen(true)}>Upload Image</Button>
-        {isModalOpen && (
+        <Button onClick={() => setIsCharacterModalOpen(true)}>Upload Image</Button>
+        {isCharacterModalOpen && (
           <ImageUpload
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
+            isOpen={isCharacterModalOpen}
+            onClose={() => setIsCharacterModalOpen(false)}
             uploadFunction={uploadImgToCharRecBE}
             renderContent={(prediction, file) => (
               <RenderCharacterContent
@@ -108,7 +110,20 @@ function KathakaliPage() {
         <div className="font-2xlarge gray mb-base">
           This is an AI algorithm that helps users understand the major types of Kathakali expressions, namely: Raudra (Anger), Sringara (Love), Bibhatsa (Odious), Karuna (Pity), Shanta (Peace), Adbhuta (Wonder), Vira (Heroic), Bhayanaka (Terrible) and Hasya (Comic).
         </div>
-        <Button>Upload Image</Button>
+        <Button onClick={() => setIsExpressionModalOpen(true)}>Upload Image</Button>
+        {isExpressionModalOpen && (
+          <ImageUpload
+            isOpen={isExpressionModalOpen}
+            onClose={() => setIsExpressionModalOpen(false)}
+            uploadFunction={uploadImgToExpressionRecBE}
+            renderContent={(prediction, file) => (
+              <RenderExpressionContent
+                predictionMultiple={prediction}
+                file={file}
+              />
+            )}
+          />
+        )}
         <div className="font-2xlarge gray my-small">
           The algorithm uses image recognition to identify the expressions and display the name of the expression. Simply upload an image of a Kathakali expression to see the result.
         </div>

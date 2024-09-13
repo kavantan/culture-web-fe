@@ -1,4 +1,4 @@
-interface Location {
+export interface Location {
   x: number;
   y: number;
   width: number;
@@ -6,7 +6,7 @@ interface Location {
   probability: number;
 }
 
-interface Prediction {
+export interface Prediction {
   prediction: string;
   location: Location;
 }
