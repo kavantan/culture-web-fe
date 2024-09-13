@@ -1,6 +1,11 @@
-.media-responsive {
+.media-responsive-base {
   height: auto;
   max-height: 50vh;
+  max-width: 100%;
+}
+.media-responsive-large {
+  height: auto;
+  max-height: 55vh;
   max-width: 100%;
 }
 .flex {

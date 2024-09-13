@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali1.jpg';
+import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali6.jpg';
 import ImageUpload from 'components/FileUploads/ImageUpload';
 import uploadImgToCharRecBE from 'utils/invokeBackend';
 import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
@@ -22,7 +22,11 @@ function KathakaliPage() {
   return (
     <div className="mb-xlarge">
       <div className="font-4xlarge white mb-large">Kathakali</div>
-      <img className="media-responsive" src={kathakaliImage} alt="Kathakali" />
+      <img
+        className="media-responsive-base"
+        src={kathakaliImage}
+        alt="Kathakali"
+      />
       <nav className="flex-center font-large gap-base text-only-button">
         <button
           className="white-underline p-base text-only-button"
@@ -56,7 +60,15 @@ function KathakaliPage() {
       <section id="overview" className="mb-large">
         <div className="font-4xlarge white mb-base">Overview</div>
         <div className="font-2xlarge gray">
-          text text text text text text text text text text text text text text
+          Kathakali is a classical dance-drama form from Kerala, India, renowned
+          for its vibrant costumes, elaborate makeup, and dramatic storytelling.
+          It combines dance, music, and acting to depict stories from Hindu
+          epics like the Mahabharata and Ramayana. The performers use expressive
+          facial expressions, detailed hand gestures (mudras), and precise body
+          movements to convey emotions and narratives. Traditionally performed
+          at night, Kathakali is a highly stylised art form that emphasizes
+          exaggerated expressions and dramatic elements, creating a visually
+          striking and immersive theatrical experience.
         </div>
       </section>
       <section id="algorithm1" className="mb-large">

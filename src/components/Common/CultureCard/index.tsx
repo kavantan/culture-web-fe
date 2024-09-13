@@ -23,7 +23,7 @@ const CultureCard: React.FC<CultureCardProps> = ({ name, url, imageUrl }) => {
       role="button"
       tabIndex={0}
     >
-      <img src={imageUrl} alt={name} className="media-responsive" />
+      <img src={imageUrl} alt={name} className="media-responsive-base" />
       <div className="p-base">
         <div className="font-2xlarge mb-base">{name}</div>
         <Button onClick={navigateToCulture}>READ MORE →</Button>
