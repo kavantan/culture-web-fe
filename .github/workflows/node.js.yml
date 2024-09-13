@@ -20,6 +20,10 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm run lint
+      - name: Setup environment variables
+        run: |
+          echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
+          echo "EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }}" >> $GITHUB_ENV
 
 
   e2e:
@@ -53,6 +57,12 @@ jobs:
       # Step 5: Install Playwright browsers
       - name: Install Playwright browsers
         run: npx playwright install chromium
+
+      # Step 6: Setup environment variables for tests
+      - name: Setup environment variables
+        run: |
+          echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
+          echo "EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }}" >> $GITHUB_ENV
 
       # Step 5: Start the React application in the background
       - name: Start React application
