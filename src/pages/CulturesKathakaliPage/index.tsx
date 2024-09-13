@@ -7,7 +7,8 @@ import RenderExpressionContent from 'components/ContentRender/RenderExpressionCo
 import Button from 'components/Common/Button';
 
 function KathakaliPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCharacterModalOpen, setIsCharacterModalOpen] = useState(false);
+  const [isExpressionModalOpen, setIsExpressionModalOpen] = useState(false);
 
   const handleNavigation = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -69,11 +70,11 @@ function KathakaliPage() {
           Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
           Chuvanna-Thadi, Vella-Thadi and Kari-Male.
         </div>
-        <Button onClick={() => setIsModalOpen(true)}>Upload Image</Button>
-        {isModalOpen && (
+        <Button onClick={() => setIsCharacterModalOpen(true)}>Upload Image</Button>
+        {isCharacterModalOpen && (
           <ImageUpload
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
+            isOpen={isCharacterModalOpen}
+            onClose={() => setIsCharacterModalOpen(false)}
             uploadFunction={uploadImgToCharRecBE}
             renderContent={(prediction, file) => (
               <RenderCharacterContent
@@ -97,11 +98,11 @@ function KathakaliPage() {
         <div className="font-2xlarge gray mb-base">
           text text text text text text text text text text text text text text
         </div>
-        <Button onClick={() => setIsModalOpen(true)}>Upload Image</Button>
-        {isModalOpen && (
+        <Button onClick={() => setIsExpressionModalOpen(true)}>Upload Image</Button>
+        {isExpressionModalOpen && (
           <ImageUpload
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
+            isOpen={isExpressionModalOpen}
+            onClose={() => setIsExpressionModalOpen(false)}
             uploadFunction={uploadImgToExpressionRecBE}
             renderContent={(prediction, file) => (
               <RenderExpressionContent
