@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+.logo-img {
+  height: 4rem;
+}
+
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
@@ -18,5 +22,8 @@
   }
   .menu {
     display: block;
+  }
+  .logo-img {
+    height: 2.5rem;
   }
 }
