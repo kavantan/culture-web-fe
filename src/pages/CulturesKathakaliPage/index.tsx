@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali1.jpg';
+import kathakaliImage from 'assets/images/kathakali-stock-images/kathakali6.jpg';
 import ImageUpload from 'components/FileUploads/ImageUpload';
-import uploadImgToCharRecBE from 'utils/invokeBackend';
+import { uploadImgToCharRecBE, uploadImgToExpressionRecBE} from 'utils/invokeBackend';
 import RenderCharacterContent from 'components/ContentRender/RenderCharacterContent';
+import RenderExpressionContent from 'components/ContentRender/RenderExpressionContent';
 import Button from 'components/Common/Button';
 
 function KathakaliPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCharacterModalOpen, setIsCharacterModalOpen] = useState(false);
+  const [isExpressionModalOpen, setIsExpressionModalOpen] = useState(false);
 
   const handleNavigation = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -22,7 +24,11 @@ function KathakaliPage() {
   return (
     <div className="mb-xlarge">
       <div className="font-4xlarge white mb-large">Kathakali</div>
-      <img className="media-responsive" src={kathakaliImage} alt="Kathakali" />
+      <img
+        className="media-responsive-base"
+        src={kathakaliImage}
+        alt="Kathakali"
+      />
       <nav className="flex-center font-large gap-base text-only-button">
         <button
           className="white-underline p-base text-only-button"
@@ -56,7 +62,15 @@ function KathakaliPage() {
       <section id="overview" className="mb-large">
         <div className="font-4xlarge white mb-base">Overview</div>
         <div className="font-2xlarge gray">
-          text text text text text text text text text text text text text text
+          Kathakali is a classical dance-drama form from Kerala, India, renowned
+          for its vibrant costumes, elaborate makeup, and dramatic storytelling.
+          It combines dance, music, and acting to depict stories from Hindu
+          epics like the Mahabharata and Ramayana. The performers use expressive
+          facial expressions, detailed hand gestures (mudras), and precise body
+          movements to convey emotions and narratives. Traditionally performed
+          at night, Kathakali is a highly stylised art form that emphasizes
+          exaggerated expressions and dramatic elements, creating a visually
+          striking and immersive theatrical experience.
         </div>
       </section>
       <section id="algorithm1" className="mb-large">
@@ -68,11 +82,11 @@ function KathakaliPage() {
           Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
           Chuvanna-Thadi, Vella-Thadi and Kari-Male.
         </div>
-        <Button onClick={() => setIsModalOpen(true)}>Upload Image</Button>
-        {isModalOpen && (
+        <Button onClick={() => setIsCharacterModalOpen(true)}>Upload Image</Button>
+        {isCharacterModalOpen && (
           <ImageUpload
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
+            isOpen={isCharacterModalOpen}
+            onClose={() => setIsCharacterModalOpen(false)}
             uploadFunction={uploadImgToCharRecBE}
             renderContent={(prediction, file) => (
               <RenderCharacterContent
@@ -94,11 +108,24 @@ function KathakaliPage() {
           Expression Recognition Algorithm
         </div>
         <div className="font-2xlarge gray mb-base">
-          text text text text text text text text text text text text text text
+          This is an AI algorithm that helps users understand the major types of Kathakali expressions, namely: Raudra (Anger), Sringara (Love), Bibhatsa (Odious), Karuna (Pity), Shanta (Peace), Adbhuta (Wonder), Vira (Heroic), Bhayanaka (Terrible) and Hasya (Comic).
         </div>
-        <Button>Upload Image</Button>
+        <Button onClick={() => setIsExpressionModalOpen(true)}>Upload Image</Button>
+        {isExpressionModalOpen && (
+          <ImageUpload
+            isOpen={isExpressionModalOpen}
+            onClose={() => setIsExpressionModalOpen(false)}
+            uploadFunction={uploadImgToExpressionRecBE}
+            renderContent={(prediction, file) => (
+              <RenderExpressionContent
+                predictionMultiple={prediction}
+                file={file}
+              />
+            )}
+          />
+        )}
         <div className="font-2xlarge gray my-small">
-          text text text text text text text text text text text text text text
+          The algorithm uses image recognition to identify the expressions and display the name of the expression. Simply upload an image of a Kathakali expression to see the result.
         </div>
       </section>
       <section id="connect">

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import heroImage from 'assets/images/kathakali-stock-images/kathakali1.jpg';
+import heroImage from 'assets/images/kathakali-stock-images/kathakali5.jpg';
 import Button from 'components/Common/Button';
 
 function MainPage() {
@@ -30,7 +30,11 @@ function MainPage() {
             </Button>
           </div>
         </div>
-        <img className="media-responsive" src={heroImage} alt="Cultural" />
+        <img
+          className="media-responsive-large"
+          src={heroImage}
+          alt="Cultural"
+        />
       </div>
     </div>
   );

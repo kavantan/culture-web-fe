@@ -4,8 +4,9 @@ import CommunityPage from 'pages/CommunityPage';
 import ContactUsPage from 'pages/ContactUsPage';
 import CulturesPage from 'pages/CulturesPage';
 import MainPage from 'pages/MainPage';
-import KathakaliPage from './pages/CulturesKathakaliPage';
-import Navbar from './components/Common/Navbar';
+import KathakaliPage from 'pages/CulturesKathakaliPage';
+import KootiyattamPage from 'pages/CulturesKootiyattamPage';
+import Navbar from 'components/Common/Navbar';
 import './styles';
 import './app.css';
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/cultures" element={<CulturesPage />} />
             <Route path="/cultures/kathakali" element={<KathakaliPage />} />
+            <Route path="/cultures/kootiyattam" element={<KootiyattamPage />} />
           </Routes>
         </div>
       </div>
