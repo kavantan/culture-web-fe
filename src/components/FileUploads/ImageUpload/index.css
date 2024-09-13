@@ -3,3 +3,37 @@
 .ant-btn-icon > .anticon {
   color: #ababab !important;
 }
+
+.ant-modal .ant-modal-title {
+  color: #ababab;
+  background-color: #2b2d38;
+}
+
+.ant-modal .ant-modal-content {
+  background-color: #2b2d38;
+}
+
+.ant-btn-primary,
+.ant-btn-default {
+  color: #ffffff;
+  background-color: #db2a6b;
+  border: none;
+}
+
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover,
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+  background-color: #c81f58;
+  color: #ffffff;
+}
+
+.ant-slider .ant-slider-track {
+  background-color: #db2a6b;
+}
+
+.ant-slider:hover .ant-slider-track {
+  background-color: #c81f58;
+}
+
+.ant-modal .ant-modal-close {
+  color: #ababab;
+}
