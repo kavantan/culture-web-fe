@@ -4,22 +4,22 @@ import { PredictionMultiple, Prediction, Location } from 'types/interface';
 const mockResponse: PredictionMultiple = {
   prediction: [
     {
-      prediction: 'White-beard',
+      prediction: 'Minukku-Female',
       location: {
-        x: 210,
-        y: 60,
-        width: 224,
-        height: 75,
+        x: 1762,
+        y: 218,
+        width: 1905,
+        height: 379,
         probability: 0,
       },
     },
     {
-      prediction: 'Kari-Male',
+      prediction: 'White-beard',
       location: {
-        x: 44,
-        y: 42,
-        width: 61,
-        height: 62,
+        x: 856,
+        y: 411,
+        width: 1003,
+        height: 567,
         probability: 0,
       },
     },
