@@ -22,8 +22,12 @@ const RenderExpressionContent: React.FC<{
   return (
     <Carousel arrows>
       {predictionMultiple.prediction.map((prediction) => {
-      const characterInfo = expressionToContent[prediction.prediction as keyof typeof expressionToContent];
-      if (!characterInfo) return null;
+        const characterInfo =
+          expressionToContent[
+            prediction.prediction as keyof typeof expressionToContent
+          ];
+        if (!characterInfo) return null;
+
         return (
           <Card
             key={characterInfo.Name}
