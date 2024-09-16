@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Modal, Upload } from 'antd';
+import { Modal, Upload, Spin } from 'antd';
 import ImgCrop from 'antd-img-crop';
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined, LoadingOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
 import './index.css';
@@ -90,7 +90,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </Upload>
         </ImgCrop>
         {error && <div className="red mt-base">{error}</div>}
-        {content && image && renderContent(content, image)}
+        {uploading ? (
+          <Spin indicator={<LoadingOutlined spin />} />
+        ) : (
+          content && image && renderContent(content, image)
+        )}
         {!isUploaded && (
           <Button
             className="mt-base"
