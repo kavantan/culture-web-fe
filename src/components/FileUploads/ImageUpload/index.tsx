@@ -4,6 +4,7 @@ import ImgCrop from 'antd-img-crop';
 import { UploadOutlined, LoadingOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
+import type { UploadFile } from 'antd';
 import './index.css';
 
 interface ImageUploadProps {
@@ -24,10 +25,19 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   const [isUploaded, setIsUploaded] = useState(false);
   const [error, setError] = useState('');
   const [content, setContent] = useState<PredictionMultiple | null>(null);
+  const [fileList, setFileList] = useState<UploadFile[]>([]);
 
   const beforeUpload = (file: File): boolean => {
     setImage(file);
     setIsUploaded(false);
+    setFileList([
+      {
+        uid: '-1',
+        name: file.name,
+        status: 'done',
+        thumbUrl: URL.createObjectURL(file),
+      },
+    ]);
     return false;
   };
 
@@ -35,6 +45,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     setImage(null);
     setIsUploaded(false);
     setContent(null);
+    setFileList([]);
   };
 
   const handleUploadImage = async () => {
@@ -49,10 +60,23 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       const prediction = await uploadFunction(image);
       setContent(prediction);
       setIsUploaded(true);
+
+      setFileList((prevList) =>
+        prevList.map((file) => ({
+          ...file,
+          status: 'done',
+          thumbUrl: URL.createObjectURL(image),
+        })),
+      );
     } catch (err: unknown) {
       if (err instanceof Error) {
-        // TODO: Show error message
         setError(err.message);
+        setFileList((prevList) =>
+          prevList.map((file) => ({
+            ...file,
+            status: 'error',
+          })),
+        );
       }
     } finally {
       setUploading(false);
@@ -77,16 +101,19 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         <ImgCrop rotationSlider>
           <Upload
             className="gray"
-            listType="text"
+            listType="picture-card"
             beforeUpload={beforeUpload}
             onRemove={onRemove}
             multiple={false}
             maxCount={1}
             accept="image/*"
+            fileList={fileList}
           >
-            <Button disabled={!!image}>
-              <UploadOutlined /> <span>Select Image</span>
-            </Button>
+            {!image && (
+              <Button>
+                <UploadOutlined /> <span>Select Image</span>
+              </Button>
+            )}
           </Upload>
         </ImgCrop>
         {error && <div className="red mt-base">{error}</div>}

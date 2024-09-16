@@ -37,3 +37,7 @@
 .ant-modal .ant-modal-close {
   color: #ababab;
 }
+
+.ant-upload-list-picture-card {
+  justify-content: center;
+}
