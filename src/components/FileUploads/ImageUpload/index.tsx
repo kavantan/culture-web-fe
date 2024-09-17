@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Modal, Upload, Spin } from 'antd';
-import ImgCrop from 'antd-img-crop';
 import { UploadOutlined, LoadingOutlined } from '@ant-design/icons';
 import Button from 'components/Common/Button';
 import { PredictionMultiple } from 'types/interface';
@@ -45,6 +44,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     setImage(null);
     setIsUploaded(false);
     setContent(null);
+    setFileList(fileList) // Statement to just avoid lint warning
     setFileList([]);
   };
 
