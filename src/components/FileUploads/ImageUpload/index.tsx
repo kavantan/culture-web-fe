@@ -24,6 +24,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   const [isUploaded, setIsUploaded] = useState(false);
   const [error, setError] = useState('');
   const [content, setContent] = useState<PredictionMultiple | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fileList, setFileList] = useState<UploadFile[]>([]);
 
   const beforeUpload = (file: File): boolean => {
@@ -44,7 +45,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     setImage(null);
     setIsUploaded(false);
     setContent(null);
-    setFileList(fileList) // Statement to just avoid lint warning
     setFileList([]);
   };
 
