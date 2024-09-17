@@ -98,24 +98,20 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       ]}
     >
       <div className="align-center justify-center p-large">
-        <ImgCrop rotationSlider>
-          <Upload
-            className="gray"
-            listType="picture-card"
-            beforeUpload={beforeUpload}
-            onRemove={onRemove}
-            multiple={false}
-            maxCount={1}
-            accept="image/*"
-            fileList={fileList}
-          >
-            {!image && (
-              <Button>
-                <UploadOutlined /> <span>Select Image</span>
-              </Button>
-            )}
-          </Upload>
-        </ImgCrop>
+      <Upload
+          className="gray"
+          name="image"
+          listType="picture"
+          beforeUpload={beforeUpload}
+          onRemove={onRemove}
+          multiple={false}
+          showUploadList
+          accept="image/*"
+        >
+          <Button disabled={!!image}>
+            <UploadOutlined /> <span>Select Image</span>
+          </Button>
+        </Upload>
         {error && <div className="red mt-base">{error}</div>}
         {uploading ? (
           <Spin indicator={<LoadingOutlined spin />} />
