@@ -1,7 +1,10 @@
 import BACKEND_URI from 'configs/env.config';
 import { PredictionMultiple, Prediction, Location } from 'types/interface';
 
-const getImageDimensions = (imageFile: File): Promise<{ width: number; height: number }> => new Promise((resolve, reject) => {
+const getImageDimensions = (
+  imageFile: File,
+): Promise<{ width: number; height: number }> =>
+  new Promise((resolve, reject) => {
     const reader = new FileReader();
 
     reader.onload = (event) => {
@@ -23,7 +26,7 @@ const uploadImage = async (
   const formData = new FormData();
   const { width, height } = await getImageDimensions(imageFile);
   formData.append('image', imageFile);
-  const response = await fetch(`${BACKEND_URI}/${endpoint}`, {
+  const response = await fetch(`${BACKEND_URI}/kathakali/${endpoint}`, {
     method: 'POST',
     body: formData,
   })
@@ -57,4 +60,4 @@ export const uploadImgToExpressionRecBE = async (
 
 export const uploadImgToCharRecBE = async (
   imageFile: File,
-): Promise<PredictionMultiple> => uploadImage(imageFile, 'kathakali');
+): Promise<PredictionMultiple> => uploadImage(imageFile, '');
