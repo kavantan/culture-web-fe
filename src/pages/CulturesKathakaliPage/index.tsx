@@ -108,7 +108,12 @@ function KathakaliPage() {
           Expression Recognition Algorithm
         </div>
         <div className="font-2xlarge gray mb-base">
-          This is an AI algorithm that helps users understand the major types of Kathakali expressions, namely: Raudra (Anger), Sringara (Love), Bibhatsa (Odious), Karuna (Pity), Shanta (Peace), Adbhuta (Wonder), Vira (Heroic), Bhayanaka (Terrible) and Hasya (Comic).
+        This is an AI algorithm that helps users understand the Navarasasas (9 Types of Facial Expressions of Kathakali).
+        </div>
+        <div className="font-2xlarge gray mb-base">
+            These are: Raudra (Anger), Sringara (Love),
+            Bibatsa (Odious), Karuna (Pity), Shanta (Peace), Adbhuta (Wonder),
+            Vira (Heroic), Bhayanaka (Terrible) and Hasya (Comic).
         </div>
         <Button onClick={() => setIsExpressionModalOpen(true)}>Upload Image</Button>
         {isExpressionModalOpen && (
