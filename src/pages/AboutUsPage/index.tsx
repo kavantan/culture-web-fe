@@ -1,18 +1,29 @@
-import kathakaliVideo from 'assets/videos/kathakali-video1.mp4';
+import { Card } from 'antd';
+import kathakaliVideoUrl from './content';
+import './index.css';
 
 function AboutUsPage() {
   return (
     <div className="mb-xlarge">
       <div className="font-4xlarge white mb-large">About Us</div>
       <div className="flex-center-responsive gap-large">
-        <div className="media-responsive-base">
-          <video controls>
-            <source src={kathakaliVideo} type="video/mp4" />
-            <track kind="captions" src="captions.vtt" label="English" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div>
+        <Card
+          className="flex-1"
+          styles={{
+            body: { backgroundColor: '#1c1e24' },
+          }}
+          bordered={false}
+          hoverable
+        >
+          <iframe
+            src={kathakaliVideoUrl}
+            className="video-container"
+            title="Kathakali Youtube Video"
+            frameBorder={0}
+            allowFullScreen
+          />
+        </Card>
+        <div className="flex-2">
           <div className="font-3xlarge mb-base">
             Learn More about Different Cultures
           </div>

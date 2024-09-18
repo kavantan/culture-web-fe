@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Carousel, Card } from 'antd';
+import { Carousel, Card, Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
 import charactersData from 'assets/data/characters.json';
 import Button from 'components/Common/Button';
 import { PredictionMultiple, Character } from 'types/interface';
@@ -12,15 +13,21 @@ const RenderCharacterContent: React.FC<{
   file: File;
 }> = ({ predictionMultiple, file }) => {
   const [imageUrl, setImageUrl] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (file) {
       const url = URL.createObjectURL(file);
       setImageUrl(url);
+      setLoading(false);
       return () => URL.revokeObjectURL(url);
     }
     return undefined;
   }, [file]);
+
+  if (loading) {
+    return <Spin indicator={<LoadingOutlined spin />} />;
+  }
 
   return (
     <Carousel arrows>

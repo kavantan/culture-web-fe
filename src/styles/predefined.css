@@ -8,8 +8,19 @@
   max-height: 55vh;
   max-width: 100%;
 }
+.max-width-75 {
+  max-width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 .flex {
   display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
 }
 .flex-between {
   display: flex;
