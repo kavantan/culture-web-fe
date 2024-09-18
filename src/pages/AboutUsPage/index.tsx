@@ -27,7 +27,7 @@ function AboutUsPage() {
           <div className="font-3xlarge mb-base">
             Learn More about Different Cultures
           </div>
-          <div className="font-xlarge text-left gray mb-base">
+          <div className="font-xlarge gray mb-base">
             KathakalAI has many resources that teach you more about different
             cultures.
           </div>
@@ -38,7 +38,7 @@ function AboutUsPage() {
             >
               Kathakali
             </a>
-            <div className="font-xlarge gray mb-base text-left">
+            <div className="font-xlarge gray mb-base">
               Kathakali is a classical dance-drama from Kerala, India, known for
               its vibrant costumes, intricate makeup, and elaborate facial
               expressions. It combines dance, music, and acting to tell stories
@@ -50,7 +50,7 @@ function AboutUsPage() {
             >
               Kootiyattam
             </a>
-            <div className="font-xlarge gray text-left">
+            <div className="font-xlarge gray">
               Koodiyattam is an ancient Sanskrit theater tradition from Kerala,
               considered one of the oldest living forms of theater. It blends
               dance, drama, and ritualistic elements.
