@@ -146,6 +146,7 @@ function KathakaliPage() {
         </div>
       </section>
     </div>
+    </div>
   );
 }
 
