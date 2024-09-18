@@ -18,15 +18,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
-      - name: Build the app
-        run: npm run build
       - name: Setup environment variables
         run: |
           echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
-          echo "EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }}" >> $GITHUB_ENV
-        env:
-          EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }} # Access the secret
+          echo "VITE_EMAIL_API_KEY=${{ secrets.VITE_EMAIL_API_KEY }}" >> $GITHUB_ENV
+      - run: npm ci
+      - name: Build the app
+        run: npm run build
       - name: Login to DockerHub
         run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u culture4web --password-stdin
       - name: Build the Docker image
