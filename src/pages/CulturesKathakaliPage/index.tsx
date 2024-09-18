@@ -86,6 +86,18 @@ function KathakaliPage() {
             of Kathakali characters, namely: Pacha, Kathi, Minukku-Female,
             Chuvanna-Thadi, Vella-Thadi and Kari-Male.
           </div>
+          <div className="font-2xlarge white mb-base">
+            To learn more about this research,{' '}
+            <a
+              href="https://www.sciencedirect.com/science/article/abs/pii/S2212054823000450"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="red"
+            >
+              read this
+            </a>
+            .
+          </div>
           <Button onClick={() => setIsCharacterModalOpen(true)}>
             Upload Image
           </Button>
@@ -121,6 +133,9 @@ function KathakaliPage() {
             These are: Raudra (Anger), Sringara (Love), Bibatsa (Odious), Karuna
             (Pity), Shanta (Peace), Adbhuta (Wonder), Vira (Heroic), Bhayanaka
             (Terrible) and Hasya (Comic).
+          </div>
+          <div className="font-2xlarge white mb-base">
+            This research is accepted for IEEE SPICES 2024, India.
           </div>
           <Button onClick={() => setIsExpressionModalOpen(true)}>
             Upload Image
