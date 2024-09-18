@@ -21,6 +21,10 @@ jobs:
       - run: npm ci
       - name: Build the app
         run: npm run build
+      - name: Setup environment variables
+        run: |
+          echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
+          echo "EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }}" >> $GITHUB_ENV
         env:
           EMAIL_API_KEY: ${{ secrets.EMAIL_API_KEY }} # Access the secret
       - name: Login to DockerHub
