@@ -1,8 +1,7 @@
 import BACKEND_URI from 'configs/env.config';
 import { PredictionMultiple, Prediction, Location } from 'types/interface';
 
-const getImageDimensions = (imageFile: File): Promise<{ width: number; height: number }> => {
-  return new Promise((resolve, reject) => {
+const getImageDimensions = (imageFile: File): Promise<{ width: number; height: number }> => new Promise((resolve, reject) => {
     const reader = new FileReader();
 
     reader.onload = (event) => {
@@ -16,7 +15,6 @@ const getImageDimensions = (imageFile: File): Promise<{ width: number; height: n
 
     reader.readAsDataURL(imageFile);
   });
-};
 
 const uploadImage = async (
   imageFile: File,
@@ -44,8 +42,8 @@ const uploadImage = async (
       location: {
         x: 0,
         y: 0,
-        width: width,
-        height: height,
+        width,
+        height,
         probability: value.accuracy,
       },
     }),

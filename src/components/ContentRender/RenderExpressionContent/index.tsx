@@ -22,8 +22,11 @@ const RenderExpressionContent: React.FC<{
   return (
     <Carousel arrows>
       {predictionMultiple.prediction.map((prediction) => {
-      const characterInfo = expressionToContent[prediction.prediction as keyof typeof expressionToContent];
-      if (!characterInfo) return null;
+        const characterInfo =
+          expressionToContent[
+            prediction.prediction as keyof typeof expressionToContent
+          ];
+        if (!characterInfo) return null;
         return (
           <Card
             key={characterInfo.Name}
@@ -41,12 +44,12 @@ const RenderExpressionContent: React.FC<{
             <div>
               <div
                 style={{
-                  width: `${prediction.location.width}px`,
-                  height: `${prediction.location.height}px`,
+                  // width: `${prediction.location.width}px`,
+                  // height: `${prediction.location.height}px`,
                   backgroundImage: `url(${imageUrl})`,
                   backgroundPosition: `-${prediction.location.x}px -${prediction.location.y}px`,
                 }}
-                className="characterImage"
+                className="cropImage"
               />
               <div className="font-base gray mb-base">
                 {characterInfo.Description}
