@@ -57,7 +57,7 @@ function Navbar() {
         >
           About Us
         </button>
-        <button
+        {/* <button
           type="button"
           onClick={() => handleNavigate('/community')}
           className={`text-only-button ${
@@ -65,7 +65,7 @@ function Navbar() {
           }`}
         >
           Community
-        </button>
+        </button> */}
         <button
           type="button"
           onClick={() => handleNavigate('/contact-us')}
