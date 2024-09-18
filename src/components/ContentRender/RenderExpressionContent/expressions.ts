@@ -9,7 +9,7 @@ const expressionToContent = {
         'Description': 'This rasa represents love, beauty, and romance. It is characterized by a gentle expression, soft eyes, and graceful movements.'
     },
     'Odious': {
-        'Name': 'Bibhatsa',
+        'Name': 'Bibatsa',
         'Description': 'This rasa conveys disgust, repulsion, and revulsion. It is characterized by a grimacing expression, wrinkled nose, and contorted movements.'
     },
     'Pity': {

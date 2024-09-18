@@ -8,4 +8,6 @@
   margin: 1rem auto;
   max-width: 100%;
   background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 1 / 1;
 }

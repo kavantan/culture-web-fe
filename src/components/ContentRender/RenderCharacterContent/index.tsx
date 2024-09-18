@@ -60,8 +60,8 @@ const RenderCharacterContent: React.FC<{
             <div>
               <div
                 style={{
-                  width: `${prediction.location.width}px`,
-                  height: `${prediction.location.height}px`,
+                  // width: `${prediction.location.width}px`,
+                  // height: `${prediction.location.height}px`,
                   backgroundImage: `url(${imageUrl})`,
                   backgroundPosition: `-${prediction.location.x}px -${prediction.location.y}px`,
                 }}

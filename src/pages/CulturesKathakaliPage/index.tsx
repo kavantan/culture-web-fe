@@ -109,46 +109,43 @@ function KathakaliPage() {
           </div>
         </section>
 
-        <section id="algorithm2" className="mb-large">
-          <div className="font-4xlarge white mb-base">
-            Expression Recognition Algorithm
-          </div>
-          <div className="font-2xlarge gray mb-base">
-            This is an AI algorithm that helps users understand the major types
-            of Kathakali expressions, namely: Raudra (Anger), Sringara (Love),
-            Bibhatsa (Odious), Karuna (Pity), Shanta (Peace), Adbhuta (Wonder),
+      <section id="algorithm2" className="mb-large">
+        <div className="font-4xlarge white mb-base">
+          Expression Recognition Algorithm
+        </div>
+        <div className="font-2xlarge gray mb-base">
+        This is an AI algorithm that helps users understand the Navarasasas (9 Types of Facial Expressions of Kathakali).
+        </div>
+        <div className="font-2xlarge gray mb-base">
+            These are: Raudra (Anger), Sringara (Love),
+            Bibatsa (Odious), Karuna (Pity), Shanta (Peace), Adbhuta (Wonder),
             Vira (Heroic), Bhayanaka (Terrible) and Hasya (Comic).
-          </div>
-          <Button onClick={() => setIsExpressionModalOpen(true)}>
-            Upload Image
-          </Button>
-          {isExpressionModalOpen && (
-            <ImageUpload
-              isOpen={isExpressionModalOpen}
-              onClose={() => setIsExpressionModalOpen(false)}
-              uploadFunction={uploadImgToExpressionRecBE}
-              renderContent={(prediction, file) => (
-                <RenderExpressionContent
-                  predictionMultiple={prediction}
-                  file={file}
-                />
-              )}
-            />
-          )}
-          <div className="font-2xlarge gray my-small">
-            The algorithm uses image recognition to identify the expressions and
-            display the name of the expression. Simply upload an image of a
-            Kathakali expression to see the result.
-          </div>
-        </section>
-        <section id="connect">
-          <div className="font-4xlarge white mb-base">Connect</div>
-          <div className="font-2xlarge gray">
-            text text text text text text text text text text text text text
-            text
-          </div>
-        </section>
-      </div>
+        </div>
+        <Button onClick={() => setIsExpressionModalOpen(true)}>Upload Image</Button>
+        {isExpressionModalOpen && (
+          <ImageUpload
+            isOpen={isExpressionModalOpen}
+            onClose={() => setIsExpressionModalOpen(false)}
+            uploadFunction={uploadImgToExpressionRecBE}
+            renderContent={(prediction, file) => (
+              <RenderExpressionContent
+                predictionMultiple={prediction}
+                file={file}
+              />
+            )}
+          />
+        )}
+        <div className="font-2xlarge gray my-small">
+          The algorithm uses image recognition to identify the expressions and display the name of the expression. Simply upload an image of a Kathakali expression to see the result.
+        </div>
+      </section>
+      <section id="connect">
+        <div className="font-4xlarge white mb-base">Connect</div>
+        <div className="font-2xlarge gray">
+          text text text text text text text text text text text text text text
+        </div>
+      </section>
+    </div>
     </div>
   );
 }

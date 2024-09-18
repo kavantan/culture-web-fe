@@ -2,3 +2,11 @@
   max-height: 40vh;
   margin: 1rem auto;
 }
+
+.cropImage {
+  margin: 1rem auto;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 1 / 1;
+}

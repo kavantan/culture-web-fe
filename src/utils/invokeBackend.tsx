@@ -1,91 +1,60 @@
 import BACKEND_URI from 'configs/env.config';
 import { PredictionMultiple, Prediction, Location } from 'types/interface';
 
-const mockResponse: PredictionMultiple = {
-  prediction: [
-    {
-      prediction: 'Minukku-Female',
+const getImageDimensions = (imageFile: File): Promise<{ width: number; height: number }> => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      const img = new Image();
+      img.onload = () => {
+        resolve({ width: img.width, height: img.height });
+      };
+      img.onerror = reject;
+      img.src = event.target?.result as string;
+    };
+
+    reader.readAsDataURL(imageFile);
+  });
+
+const uploadImage = async (
+  imageFile: File,
+  endpoint: string,
+): Promise<PredictionMultiple> => {
+  const formData = new FormData();
+  const { width, height } = await getImageDimensions(imageFile);
+  formData.append('image', imageFile);
+  const response = await fetch(`${BACKEND_URI}/${endpoint}`, {
+    method: 'POST',
+    body: formData,
+  })
+    .then((output) => output.json())
+    .catch(() => {
+      throw new Error('Failed to upload image.');
+    });
+
+  const toReturn: Prediction[] = response.map(
+    (value: {
+      prediction: string;
+      location: Location[];
+      accuracy: number[];
+    }) => ({
+      prediction: value.prediction,
       location: {
-        x: 1762,
-        y: 218,
-        width: 1905,
-        height: 379,
-        probability: 0,
+        x: 0,
+        y: 0,
+        width,
+        height,
+        probability: value.accuracy,
       },
-    },
-    {
-      prediction: 'White-beard',
-      location: {
-        x: 856,
-        y: 411,
-        width: 1003,
-        height: 567,
-        probability: 0,
-      },
-    },
-  ],
+    }),
+  );
+  return { prediction: toReturn };
 };
 
 export const uploadImgToExpressionRecBE = async (
   imageFile: File,
-): Promise<PredictionMultiple> => {
-  const formData = new FormData();
-  formData.append('image', imageFile);
-  const response = await fetch(`${BACKEND_URI}/classify-expression`, {
-    method: 'POST',
-    body: formData,
-  }).then((output) => output.json())
-    .catch(() => {
-      throw new Error('Failed to upload image.');
-  });
-
-  const toReturn: Prediction[] = response.map((value: { prediction: string; location: Location[]; accuracy: number[]; }) => ({
-      prediction: value.prediction,
-      location: {
-        x: value.location[0],
-        y: value.location[2],
-        width: value.location[1],
-        height: value.location[3],
-        probability: value.accuracy
-      }
-    }))
-  return {prediction: toReturn};
-};
+): Promise<PredictionMultiple> => uploadImage(imageFile, 'classify-expression');
 
 export const uploadImgToCharRecBE = async (
   imageFile: File,
-): Promise<PredictionMultiple> => {
-  const formData = new FormData();
-  formData.append('image', imageFile);
-
-  const response = await fetch(`${BACKEND_URI}/classify`, {
-    method: 'POST',
-    body: formData,
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to upload image.');
-  }
-
-  // TODO: Uncomment return statement and test function once backend is ready
-  // return response.json();
-  return mockResponse;
-};
-
-// TODO: Uncomment and test function once backend is ready
-// const uploadImgToExpressionRecBE = async (
-//   imageFile: File,
-// ): Promise<PredictionMultiple> => {
-//   const formData = new FormData();
-//   formData.append('image', imageFile);
-
-//   const response = await fetch(`${BACKEND_URI}/expression`, {
-//     method: 'POST',
-//     body: formData,
-//   });
-
-//   if (!response.ok) {
-//     throw new Error('Failed to upload image.');
-//   }
-//   return response.json();
-// };
+): Promise<PredictionMultiple> => uploadImage(imageFile, 'kathakali');
