@@ -25,7 +25,6 @@ jobs:
           echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
           echo "EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }}" >> $GITHUB_ENV
 
-
   e2e:
     name: Run Playwright E2E Tests
     runs-on: ubuntu-latest
@@ -62,7 +61,7 @@ jobs:
       - name: Setup environment variables
         run: |
           echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
-          echo "EMAIL_API_KEY=${{ secrets.EMAIL_API_KEY }}" >> $GITHUB_ENV
+          echo "VITE_EMAIL_API_KEY=${{ secrets.VITE_EMAIL_API_KEY }}" >> $GITHUB_ENV
 
       # Step 5: Start the React application in the background
       - name: Start React application
