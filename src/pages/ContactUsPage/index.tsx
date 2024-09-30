@@ -28,15 +28,16 @@ const ContactUsPage: React.FC = () => {
       <p>Any questions? Drop us a message!</p>
       <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST" className="contactForm">
       <input type="hidden" name="access_key" value={EMAIL_API_KEY} />
-        <div className="formRow">
-          <input type="text" name="firstName" placeholder="First Name" required />
-          <input type="text" name="lastName" placeholder="Last Name" required />
-        </div>
-        <div className="formRow">
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="tel" name="number" placeholder="Phone Number" />
-        </div>
-        <textarea name="message" placeholder="Write your inquiry..." required />
+      <div className="formRow">
+        <input type="text" name="name" placeholder="Name" required autoComplete="off" />
+      </div>
+      <div className="formRow">
+        <input type="tel" name="number" placeholder="Phone Number" autoComplete="off" />
+      </div>
+      <div className="formRow">
+        <input type="email" name="email" placeholder="Email" required autoComplete="off" />
+      </div>
+      <textarea name="message" placeholder="Write your inquiry..." required autoComplete="off" />
         <Button type="submit">Send Message</Button>
         {submitted && <p>Thank you! Your message has been sent.</p>}
       </form>
