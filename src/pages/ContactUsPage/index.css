@@ -21,16 +21,57 @@
   margin-bottom: 15px;
 }
 
-.formRow input[type='text'],
-.formRow input[type='email'],
-.formRow input[type='tel'] {
-  width: 48%;
+.formRow, textarea {
+  width: 100%;
+}
+
+input, textarea {
+  width: 100%;
   padding: 10px;
+  border: none;
+  border-bottom: 2px solid #333;
+  background: transparent;
+  color: white; /* Text color set to white */
+  font-size: 1.5rem; /* Increased text size */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 2px solid #555;
 }
 
 textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  height: 120px;
+  resize: vertical;
+  min-height: 100px;
 }
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+input:-webkit-autofill {
+  background-color: #2b2d38 !important; /* Match autofill background to your form's background */
+  color: white !important;
+  -webkit-box-shadow: 0 0 0 30px #2b2d38 inset !important; /* Set box-shadow to match the background */
+  -webkit-text-fill-color: white !important;
+  font-size: 1.5rem;
+}
+
+
+
+
