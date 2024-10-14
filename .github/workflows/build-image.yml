@@ -7,6 +7,10 @@ on:
         description: 'Docker image tag'
         required: true
         default: 'latest'
+      backend-uri:
+        description: 'Backend URI'
+        required: true
+        default: 'https://kathakali.comp.nus.edu.sg/api/'
 
 jobs:
   build:
@@ -20,7 +24,7 @@ jobs:
           cache: 'npm'
       - name: Setup environment variables
         run: |
-          echo "VITE_BACKEND_URI=${{ secrets.VITE_BACKEND_URI }}" >> $GITHUB_ENV
+          echo "VITE_BACKEND_URI=${{ github.event.inputs.backend-uri }}" >> $GITHUB_ENV
           echo "VITE_EMAIL_API_KEY=${{ secrets.VITE_EMAIL_API_KEY }}" >> $GITHUB_ENV
       - run: npm ci
       - name: Build the app
