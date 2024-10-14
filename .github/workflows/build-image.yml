@@ -10,7 +10,7 @@ on:
       backend-uri:
         description: 'Backend URI'
         required: true
-        default: 'https://kathakali.comp.nus.edu.sg/api/'
+        default: 'https://kathakali.comp.nus.edu.sg/api'
 
 jobs:
   build:
