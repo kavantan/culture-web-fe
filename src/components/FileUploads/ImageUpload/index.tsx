@@ -117,11 +117,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           </Upload>
         </ImgCrop>
         {error && <div className="red mt-base">{error}</div>}
-        {uploading ? (
-          <Spin indicator={<LoadingOutlined spin />} />
-        ) : (
-          content && image && renderContent(content, image)
-        )}
         {!isUploaded && (
           <Button
             className="mt-base"
@@ -130,6 +125,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           >
             {uploading ? 'Uploading...' : 'Upload Image'}
           </Button>
+        )}
+        {uploading ? (
+          <Spin indicator={<LoadingOutlined spin />} />
+        ) : (
+          content && image && renderContent(content, image)
         )}
       </div>
     </Modal>
