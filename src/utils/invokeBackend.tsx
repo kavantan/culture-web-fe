@@ -24,7 +24,7 @@ const uploadImage = async (
   endpoint: string,
 ): Promise<PredictionMultiple> => {
   const formData = new FormData();
-  const { width, height } = await getImageDimensions(imageFile);
+  // const { width, height } = await getImageDimensions(imageFile); // Used for single showing of image
   formData.append('image', imageFile);
   const response = await fetch(`${BACKEND_URI}/kathakali/${endpoint}`, {
     method: 'POST',
@@ -38,15 +38,15 @@ const uploadImage = async (
   const toReturn: Prediction[] = response.map(
     (value: {
       prediction: string;
-      location: Location[];
+      location: number[];
       accuracy: number[];
     }) => ({
       prediction: value.prediction,
       location: {
-        x: 0,
-        y: 0,
-        width,
-        height,
+        x: value.location[0],
+        y: value.location[1],
+        width: value.location[2] - value.location[0],
+        height: value.location[3] - value.location[1],
         probability: value.accuracy,
       },
     }),

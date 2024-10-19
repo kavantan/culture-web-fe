@@ -60,12 +60,12 @@ const RenderCharacterContent: React.FC<{
             <div>
               <div
                 style={{
-                  // width: `${prediction.location.width}px`,
-                  // height: `${prediction.location.height}px`,
+                  width: `${prediction.location.width + 50}px`,
+                  height: `${prediction.location.height + 50}px`,
                   backgroundImage: `url(${imageUrl})`,
                   backgroundPosition: `-${prediction.location.x}px -${prediction.location.y}px`,
                 }}
-                className="cropImage"
+                className="characterImage"
               />
               <div className="font-base gray mb-base">
                 {characterInfo.shortDescription}
